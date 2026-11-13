@@ -1,18 +1,21 @@
 """Club enrollment and fictional charges for the local demo."""
 
 from collections import Counter
+from datetime import datetime, timezone
 from typing import Annotated, Literal
 from uuid import uuid4
 
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Response
 from pydantic import BaseModel, ConfigDict, Field
 
 from .auth import require_roles
 from .db import edit_state, read_state
+from .receipts import receipt_pdf, visible_receipts
 
 
 router = APIRouter(prefix="/api/clubs", tags=["clubs"])
 director = require_roles("director")
+receipt_reader = require_roles("director", "student")
 enrollment_actor = require_roles("director", "student")
 RecordId = Annotated[str, Field(min_length=1, max_length=80)]
 Cents = Annotated[int, Field(ge=0, le=1_000_000)]
@@ -54,8 +57,9 @@ def project_clubs(state, profile):
         {"programName": names.get(charge["programId"], "Club"), **charge}
         for charge in data["charges"]
     ]
+    receipts = visible_receipts(charges, state["students"], profile)
     if profile["role"] == "director":
-        return {**data, "programs": programs, "charges": charges}
+        return {**data, "programs": programs, "charges": charges, "receipts": receipts}
 
     active_programs = [program for program in programs if not program["archived"]]
     if profile["role"] == "student":
@@ -64,12 +68,14 @@ def project_clubs(state, profile):
             "programs": active_programs,
             "enrollments": [item for item in data["enrollments"] if item["studentId"] == student_id],
             "charges": [item for item in charges if item["studentId"] == student_id],
+            "receipts": receipts,
         }
 
     return {
         "programs": [{key: value for key, value in item.items() if key != "feeCents"} for item in active_programs],
         "enrollments": [],
         "charges": [],
+        "receipts": [],
     }
 
 
@@ -200,5 +206,18 @@ def set_charge_status(charge_id: str, action: Literal["confirm", "cancel"], prof
         status = "confirmed" if action == "confirm" else "cancelled"
         if charge["status"] == "cancelled" and status != "cancelled":
             raise HTTPException(409, "A cancelled charge cannot be confirmed.")
+        if status == "confirmed" and charge["status"] == "draft":
+            charge["confirmedOn"] = datetime.now(timezone.utc).date().isoformat()
         charge["status"] = status
         return charge
+
+
+@router.get("/receipts/{receipt_id}/pdf")
+def download_receipt(receipt_id: str, profile=Depends(receipt_reader)):
+    receipts = project_clubs(read_state(), profile)["receipts"]
+    receipt = find_record(receipts, receipt_id, "Receipt")
+    return Response(
+        receipt_pdf(receipt),
+        media_type="application/pdf",
+        headers={"Content-Disposition": f'attachment; filename="receipt-{receipt_id}.pdf"'},
+    )

@@ -122,3 +122,11 @@ progress { width: 100%; accent-color: var(--accent); }
   .topbar { padding: 8px 12px; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; } }
+
+.demo-guide { margin-top: 10px; }
+.download-link {
+  display: inline-flex; align-items: center; min-height: 42px;
+  padding: 8px 12px; border-radius: 8px; font-weight: 600;
+  color: white; background: var(--accent); text-decoration: none;
+}
+.download-link:hover { background: #254b3a; }

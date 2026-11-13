@@ -13,3 +13,6 @@
 !requirements.lock
 !server/
 !server/*.py
+!server/fonts/
+!server/fonts/Inter.ttf
+!server/fonts/OFL.txt

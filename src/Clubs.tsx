@@ -124,7 +124,7 @@ function ClubCharges({ state, busy, mutate }: { state: State; busy: boolean; mut
   const locked = busy || previewing
   return <section className="card stack" aria-labelledby="club-fees-title">
     <h2 id="club-fees-title">Demo fees</h2>
-    <p className="muted">All amounts are fictional. No payments are collected.</p>
+    <p className="muted">All amounts are fictional. <a href="#receipts">View sample and confirmed receipts</a>.</p>
     {isDirector && (eligible.length ? <form className="form" onSubmit={submitCharge} onChange={() => { setQuote(undefined); setError('') }}>
       <label>Enrollment <select name="enrollment" defaultValue="" required disabled={locked}>
         <option value="" disabled>Choose an enrollment</option>

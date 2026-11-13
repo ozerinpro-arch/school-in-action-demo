@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import {
   Activity as ActivityIcon, BarChart3, BookOpen, CalendarDays, ClipboardList, FileCheck,
-  GraduationCap, Layers3, ListTodo, Plug, Replace, TrendingUp, Users,
+  GraduationCap, Layers3, ListTodo, Plug, ReceiptText, Replace, TrendingUp, Users,
 } from 'lucide-react'
 import '@fontsource/inter/latin-400.css'
 import '@fontsource/inter/latin-500.css'
@@ -12,6 +12,7 @@ import { api, ApiError, type Mutation, type Role, type State } from './api'
 import { Schedule, Substitutions } from './Schedule'
 import Assignments from './Assignments'
 import Clubs from './Clubs'
+import Receipts from './Receipts'
 import { Grades, Progress } from './StudentProgress'
 import { Activity, Directory, Documents, Integrations, Materials, Overview, Tasks } from './Workspaces'
 import './styles.css'
@@ -26,6 +27,7 @@ const pages = [
   { id: 'progress', title: 'Progress', icon: TrendingUp, roles: ['student'] as Role[], component: Progress },
   { id: 'materials', title: 'Materials', icon: BookOpen, roles: all, component: Materials },
   { id: 'clubs', title: 'Clubs', icon: Layers3, roles: ['director', 'student'] as Role[], component: Clubs },
+  { id: 'receipts', title: 'Receipts', icon: ReceiptText, roles: ['director', 'student'] as Role[], component: Receipts },
   { id: 'tasks', title: 'School tasks', icon: ListTodo, roles: staff, component: Tasks },
   { id: 'documents', title: 'Documents', icon: FileCheck, roles: ['director'] as Role[], component: Documents },
   { id: 'directory', title: 'Directory', icon: Users, roles: ['director'] as Role[], component: Directory },
@@ -112,9 +114,19 @@ function App() {
   }
 
   async function changeRole(value: string) {
-    const body = value.startsWith('t') ? { role: 'teacher', teacherId: value } : { role: value }
-    if (await mutate('/api/demo/session', body)) navigate('schedule')
+    const role = value.startsWith('t') ? 'teacher' : value as Role
+    const body = role === 'teacher' ? { role, teacherId: value } : { role }
+    if (await mutate('/api/demo/session', body)) {
+      navigate(pages.some(item => item.id === page && item.roles.includes(role)) ? page : 'schedule')
+    }
   }
+
+  useEffect(() => {
+    if (state && !pages.some(item => item.id === page && item.roles.includes(state.role))) {
+      setPage('schedule')
+      window.history.replaceState(null, '', '#schedule')
+    }
+  }, [state, page])
 
   if (!state) return <main className="startup">
     <span className="brand-icon"><GraduationCap aria-hidden="true"/></span><h1>School in Action</h1>
@@ -156,6 +168,14 @@ function App() {
           {state.role === 'director' && active.id === 'overview' &&
             <button disabled={busy} onClick={() => setConfirmReset(value => !value)}>Reset demo</button>}
         </div>
+        {active.id === 'schedule' && <details className="card">
+          <summary>What can I try?</summary>
+          <div className="stack demo-guide">
+            <p><strong>Cover a lesson.</strong> Switch to Maya Brooks, request a substitute for Monday's Biology class, then approve Owen Reed as Director. Jamie's schedule shows the change.</p>
+            <p><strong>Follow an assignment.</strong> Publish one as Maya, send an answer as Jamie, then switch back to Maya to review it.</p>
+            {state.role !== 'teacher' && <p><strong>See a club receipt.</strong> Open <a href="#receipts" onClick={event => { event.preventDefault(); navigate('receipts') }}>Receipts</a> to download the Robotics club example.</p>}
+          </div>
+        </details>}
         {confirmReset && <div className="notice stack"><p>Restore the original fictional records? Demo changes will be removed.</p>
           <div className="actions"><button className="primary" disabled={busy} onClick={async () => {
             if (await mutate('/api/demo/reset')) setConfirmReset(false)

@@ -25,6 +25,10 @@ export type Charge = {
   id: string; programId: string; programName?: string; studentId: string; period: string; amountCents: number
   status: 'draft' | 'confirmed' | 'cancelled'
 }
+export type Receipt = {
+  id: string; programName: string; studentName: string; period: string
+  amountCents: number; confirmedOn: string | null; sample: boolean
+}
 export type State = {
   role: Role; profile: Profile; schedule: Lesson[]; students: Person[]; teachers: Teacher[]
   replacements: Substitution[]; assignments: Assignment[]
@@ -33,7 +37,7 @@ export type State = {
   tasks: { id: string; title: string; description: string; status: string; owner: string }[]
   documents: { id: string; title: string; content: string; status: string }[]
   activity: { id: string; title: string; actor: string; at: string; unread: boolean }[]
-  clubs: { programs: Program[]; enrollments: Enrollment[]; charges: Charge[] }
+  clubs: { programs: Program[]; enrollments: Enrollment[]; charges: Charge[]; receipts: Receipt[] }
 }
 
 export type Mutation = (path: string, body?: unknown, method?: string) => Promise<boolean>

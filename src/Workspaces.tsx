@@ -118,9 +118,9 @@ const integrations = [
   ['AI assistance', 'NanoGPT and automatic material generation are disconnected. Teachers can share lesson materials manually.'],
   ['MAX notifications', 'The MAX bot and outbound messages are disconnected. Activity is recorded in the demo.'],
   ['School identity and data imports', 'Live sign-in, staff invitations, school data connectors and timetable imports are outside this demo. The demo uses fictional roles and built-in records.'],
-  ['Payment processing', 'Club fees are simulated accounting records. Payment services and external receipts are disconnected.'],
+  ['Payment processing', 'Club fees are simulated accounting records. Sample PDFs are available in Receipts. Live payment services are disconnected.'],
   ['School planning and publication', 'Constraint solver, dated calendar, daily planning brief, timetable revision history and formal publishing are outside this demo. Edits and substitutions appear directly in the relevant workspaces.'],
-  ['Extended school workspaces', 'The demo covers the director, teacher and student workflows. The legacy accountant workspace, PDF receipts, school-wide search, attendance records, assignment drafts, discussion threads and practice activities are outside the demo.'],
+  ['Extended school workspaces', 'The demo covers the director, teacher and student workflows. The legacy accountant workspace, school-wide search, attendance records, assignment drafts, discussion threads and practice activities are outside the demo.'],
 ]
 
 export function Integrations() {

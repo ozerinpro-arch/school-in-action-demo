@@ -21,13 +21,14 @@ Open [http://127.0.0.1:5188](http://127.0.0.1:5188). The first build downloads t
 | Assignments | As Maya, publish a Biology assignment for **Jamie Lane**. As Jamie, submit an answer. Return to Maya to score it and leave feedback. Read the result in Jamie's Assignments and Grades, and see counts by subject in Progress. |
 | Materials and tasks | Teachers can share notes for their scheduled lessons and update their school tasks. Students see their class materials and their own assignment and schedule activity. |
 | Clubs | As Director, create or edit a program and manage enrollment. As Jamie, join or leave an active club. For a paid fictional club, preview, draft, confirm or cancel a simulated charge in the director workspace. |
+| Receipts | Open **Receipts** as Director or Jamie to download the Robotics club example. Confirm a new club charge to issue its PDF. Cancelling a charge removes its download. The PDFs record fictional charges and show that no payment was collected. |
 | School overview | As Director, open the directory, approve the example document, view live counts and inspect the activity feed. |
 
 The role selector is intentionally open to everyone with local access. Its fictional sessions expire or end when the container restarts. SQLite changes survive a stop, restart or container replacement. Use **Overview → Reset demo** in the director workspace to restore the original fictional records.
 
 ## Integration status
 
-The **Integrations** page lists the disconnected or omitted systems. These include NanoGPT, MAX, real staff/student identity, imports, school data connectors and payment processing. Automated schedule solving, daily planning, live calendar and formal school publication are outside the standalone demo. Schedule edits and substitutions appear directly in the appropriate workspaces. The legacy accountant workspace, receipt PDFs, global search, canned helper, attendance, assignment drafts, discussions and practice activities are outside this demo.
+The **Integrations** page lists the disconnected or omitted systems. These include NanoGPT, MAX, real staff/student identity, imports, school data connectors and payment processing. Automated schedule solving, daily planning, live calendar and formal school publication are outside the standalone demo. Schedule edits and substitutions appear directly in the appropriate workspaces. The legacy accountant workspace, global search, canned helper, attendance, assignment drafts, discussions and practice activities are outside this demo.
 
 ## Verification
 
