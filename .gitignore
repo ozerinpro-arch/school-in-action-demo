@@ -1,0 +1,12 @@
+.DS_Store
+.env
+.env.*
+.venv/
+node_modules/
+dist/
+data/
+__pycache__/
+*.py[cod]
+*.sqlite*
+test-results/
+playwright-report/

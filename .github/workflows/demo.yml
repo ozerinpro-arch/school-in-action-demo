@@ -1,0 +1,38 @@
+name: Demo checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  demo:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '22.23.2'
+          cache: npm
+      - name: Install browser test dependencies
+        run: |
+          npm ci --ignore-scripts
+          npx playwright install --with-deps chromium
+      - name: Build and start the demo
+        run: docker compose up --build --detach --wait
+      - name: Check browser workflows
+        env:
+          DEMO_E2E_RESET: '1'
+        run: npm run test:e2e
+      - name: Check role boundaries and restart persistence
+        run: |
+          python3 scripts/check-persistence.py write "$RUNNER_TEMP/school-marker.json"
+          docker compose restart demo
+          python3 scripts/check-persistence.py verify "$RUNNER_TEMP/school-marker.json"
+      - name: Stop demo
+        if: always()
+        run: docker compose down

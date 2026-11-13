@@ -1,0 +1,15 @@
+*
+!package.json
+!package-lock.json
+!tsconfig.json
+!index.html
+!public/
+!public/**
+!src/
+!src/**
+!tests/
+!tests/*.ts
+!playwright.config.ts
+!requirements.lock
+!server/
+!server/*.py

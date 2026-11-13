@@ -1,0 +1,18 @@
+services:
+  demo:
+    build: .
+    ports:
+      - '127.0.0.1:5188:5188'
+    volumes:
+      - demo-data:/data
+    read_only: true
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: [CMD, python, -c, "from urllib.request import urlopen; urlopen('http://127.0.0.1:5188/api/health', timeout=2)"]
+      interval: 3s
+      timeout: 3s
+      retries: 15
+volumes:
+  demo-data:
