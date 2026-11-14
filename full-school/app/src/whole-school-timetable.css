@@ -1,0 +1,21 @@
+/* Functional table/sticky/scroll rules; lesson cards retain the existing material. */
+.tt-workspace .wst-view{min-width:0;max-width:100%}
+.tt-workspace .wst-navigation{display:flex;align-items:center;gap:12px;padding:0 0 10px}
+.tt-workspace .wst-navigation>p{flex:1;margin:0}
+.tt-workspace .wst-scroll-actions{display:flex;flex-shrink:0;gap:4px}
+.tt-workspace .wst-scroll{max-width:100%;max-height:70vh;overflow:auto;overscroll-behavior:contain;scrollbar-width:auto;border:1px solid var(--tt-line);border-radius:8px;isolation:isolate}
+.tt-workspace .wst-scroll:focus-visible{outline:3px solid var(--tt-blue);outline-offset:3px}
+.tt-workspace .wst-table{width:max-content;min-width:100%;border-collapse:separate;border-spacing:0;table-layout:fixed;color:inherit;font:inherit}
+.tt-workspace .wst-table th,.tt-workspace .wst-table td{width:174px;min-width:174px;max-width:174px;padding:7px;vertical-align:top;border:0;border-right:1px solid var(--tt-line);border-bottom:1px solid var(--tt-line);text-align:left;overflow-wrap:anywhere}
+.tt-workspace .wst-table thead th{position:sticky;top:0;z-index:2;background:var(--sw-bg,#f0f4fb);font-size:12px;font-weight:600;text-align:center;padding:13px 7px}
+.tt-workspace .wst-table .wst-time{position:sticky;left:0;width:112px;min-width:112px;max-width:112px;z-index:1;background:var(--sw-bg,#f0f4fb)}
+.tt-workspace .wst-table thead .wst-time{z-index:3}
+.tt-workspace .wst-table tbody .wst-time strong,.tt-workspace .wst-table tbody .wst-time span,.tt-workspace .wst-table tbody .wst-time small{display:block;line-height:1.5}
+.tt-workspace .wst-table tbody .wst-time strong{font-size:11px;font-weight:600}
+.tt-workspace .wst-table tbody .wst-time span{font-size:11px;margin-top:5px;white-space:nowrap}
+.tt-workspace .wst-table tbody .wst-time small{font-size:10px;color:var(--tt-muted);font-weight:400;margin-top:2px}
+.tt-workspace .wst-day-start:not(:first-child)>th,.tt-workspace .wst-day-start:not(:first-child)>td{border-top:2px solid var(--tt-line)}
+.tt-workspace .wst-entries{display:flex;flex-direction:column;gap:7px;min-height:38px}
+.tt-workspace .wst-entry{min-width:0}
+.tt-workspace .wst-table .tt-lesson{min-height:0;padding-left:40px;white-space:normal}
+@media(max-width:600px){.tt-workspace .wst-table th,.tt-workspace .wst-table td{width:162px;min-width:162px;max-width:162px}.tt-workspace .wst-table .wst-time{width:106px;min-width:106px;max-width:106px}.tt-workspace .wst-scroll-actions .tt-icon-btn{width:38px;height:38px}}

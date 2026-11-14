@@ -1,0 +1,31 @@
+.experimental-school-plan{min-width:0;max-width:100%;overflow-wrap:anywhere;--cp-block-gap:22px;display:grid;gap:var(--cp-block-gap)}
+.experimental-school-plan .esp-panel{min-width:0;padding:20px;display:grid;gap:15px}
+.experimental-school-plan h2,.experimental-school-plan h3,.experimental-school-plan h4,.experimental-school-plan p{margin:0}
+.experimental-school-plan h2{font-size:20px}.experimental-school-plan h3{font-size:16px}
+.experimental-school-plan p{font-size:12px;line-height:1.65}.experimental-school-plan small{font-size:10px;line-height:1.6}
+.experimental-school-plan .esp-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
+.experimental-school-plan .esp-heading>div{min-width:0;display:grid;gap:6px}
+.experimental-school-plan .esp-heading p,.experimental-school-plan .sp-result-stats span{color:#576e91}
+.experimental-school-plan .sp-result-stats strong{color:#365b94}
+.experimental-school-plan .esp-banner{border:1px solid #edcc93;background:#fff4e5;color:#755024;padding:14px;border-radius:12px;display:grid;gap:7px}
+.experimental-school-plan .esp-banner>strong{font-size:12px;letter-spacing:.035em}
+.experimental-school-plan .esp-actions{display:flex;flex-wrap:wrap;gap:10px}
+.experimental-school-plan .esp-note{color:#576e91}
+.experimental-school-plan .esp-status{display:grid;gap:7px;padding:14px;background:#f0f5fd;border:1px solid #d8e4f7;border-radius:12px}
+.experimental-school-plan details{min-width:0;border-top:1px solid #d7e0f0;padding-top:12px}
+.experimental-school-plan summary{cursor:pointer;font-size:12px;font-weight:650;line-height:1.6;min-height:32px}
+.experimental-school-plan details[open]>summary{margin-bottom:10px}
+.experimental-school-plan ul{padding-left:20px;display:grid;gap:8px;font-size:12px;line-height:1.6;margin:0}
+.experimental-school-plan li{white-space:pre-line}
+.experimental-school-plan .esp-assumption{padding:12px 0;display:grid;gap:6px;border-bottom:1px solid #dbe3ef}
+.experimental-school-plan .esp-value{white-space:pre-line}
+.experimental-school-plan .esp-assumption>strong{font-size:12px}.experimental-school-plan .esp-assumption>small{color:#80551e}
+.experimental-school-plan .esp-lesson{background:#fff4e5;color:#785423;border-color:#e6c795;box-shadow:inset 0 1px 0 #fff;cursor:default}
+.experimental-school-plan .esp-lesson:hover{transform:none;background:#fff4e5}
+.experimental-school-plan .esp-grid .wst-table .esp-lesson{padding:9px}
+.experimental-school-plan .esp-lesson .tt-lesson-top{position:static;inset:auto;flex-wrap:wrap}
+.experimental-school-plan .esp-grid .wst-table tbody .wst-time strong{white-space:normal;overflow-wrap:anywhere}
+.experimental-school-plan .esp-lesson strong{color:#754c18}.experimental-school-plan .esp-lesson small{color:#7a5f3d}
+.experimental-school-plan .sp-btn:focus-visible,.experimental-school-plan summary:focus-visible,.experimental-school-plan select:focus-visible{outline:3px solid #4a7ef0;outline-offset:3px}
+@media(max-width:767px){.experimental-school-plan{--cp-block-gap:16px}.experimental-school-plan .esp-panel{padding:16px}.experimental-school-plan .esp-heading{flex-wrap:wrap}.experimental-school-plan .esp-actions>button{width:100%}}
+@media(prefers-reduced-motion:reduce){.experimental-school-plan *{scroll-behavior:auto;transition:none;animation:none}}

@@ -1,0 +1,26 @@
+.sw-entry{min-height:100vh;display:grid;place-items:center;padding:24px}.sw-entry>.sg-panel{max-width:540px;width:100%;padding:28px}.sw-shell .sg-navigation button{width:100%;text-align:left;font:inherit;cursor:pointer}.sw-shell .sg-sidebar-bottom>.sg-control{width:100%;justify-content:center}.sw-muted{color:#526a62;font-size:13px}.sw-table-scroll{overflow:auto}.sw-table{width:100%;border-collapse:collapse;text-align:left;font-size:14px}.sw-table th,.sw-table td{padding:13px;border-bottom:1px solid rgba(85,117,97,.17)}.sw-table th{font-weight:600}.sw-shell :is(button,a,input,select,textarea):focus-visible{outline:2px solid #2f5d46;outline-offset:3px}@media(max-width:1024px){.sw-shell{display:block!important}.sw-shell .sg-sidebar{display:flex!important;position:relative!important;inset:auto!important;width:auto!important;min-height:0!important;height:auto!important;flex-direction:column!important;padding:14px!important;border-radius:0!important}.sw-shell .sg-brand{padding:4px!important}.sw-shell .sg-navigation{display:flex;flex-direction:row;gap:8px;overflow:auto;padding:8px 0;flex:none}.sw-shell .sg-navigation button{width:auto;flex:none;white-space:nowrap;min-height:44px}.sw-shell .sg-sidebar-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:0}.sw-shell .sg-sidebar-bottom>.sg-control{width:auto}.sw-shell .sg-profile{min-width:0}.sw-shell .sg-workspace{margin:0!important}.sw-shell .sg-main{padding:18px 14px 34px!important}.sw-shell .sg-topbar{padding:10px 16px!important;min-height:52px}}@media(prefers-reduced-motion:reduce){.sw-shell *{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+/* Staff headings retain their full text controls on narrow screens. */
+@media(max-width:767px){
+ .school-app .sw-shell .sg-page-heading{flex-wrap:wrap;align-items:flex-start;min-width:0}
+ .school-app .sw-shell .sg-page-heading>div{flex:1 1 220px;min-width:0;overflow-wrap:anywhere}
+ .school-app .sw-shell .sg-page-heading>.sg-control{width:auto;max-width:100%;min-width:0;padding:9px 14px;white-space:normal}
+}
+
+/* Keep schedule and absence messages as independent blocks. */
+.school-app .sw-schedule-stack{display:grid;gap:22px;min-width:0;align-items:start}
+@media(max-width:767px){.school-app .sw-schedule-stack{gap:16px}}
+
+/* Daily brief keeps the accepted Cloud Porcelain layout. */
+.sw-daily-entry>.sg-panel{display:grid;gap:16px;padding:24px;min-width:0}
+.sw-daily-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.sw-daily-heading>div{flex:1 1 320px;min-width:0}
+.sw-daily-entry h2,.sw-daily-calendar-context h2{margin:0;font-size:20px;line-height:28px;font-weight:600}
+.sw-daily-entry p,.sw-daily-calendar-context p{margin:8px 0 0;font-size:14px;line-height:20px;overflow-wrap:anywhere}
+.sw-daily-entry .sg-control{max-width:100%;min-height:44px;white-space:normal;font-size:14px;line-height:20px}
+.sw-daily-steps{display:flex;flex-wrap:wrap;gap:8px 28px;margin:0;padding-left:20px;font-size:12px;line-height:20px;color:var(--sg-muted,#545d70)}
+.sw-daily-entry .sw-daily-caption{margin:0;font-size:12px;line-height:20px;color:var(--sg-muted,#545d70)}
+.sw-daily-calendar-context{display:grid;gap:16px;align-content:start}
+.sw-daily-calendar-context p{margin:0}
+.sw-daily-calendar-context>.sg-control{justify-self:start;min-height:44px}
+@media(max-width:767px){.sw-daily-entry>.sg-panel{padding:16px}.sw-daily-heading>.sg-control{width:100%;justify-content:center}.sw-daily-heading>div{flex-basis:100%}.sw-daily-steps{display:grid;gap:4px}}

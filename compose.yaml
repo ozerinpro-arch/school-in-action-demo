@@ -1,18 +1,24 @@
 services:
-  demo:
-    build: .
+  school:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      DEMO_PORT: ${DEMO_PORT:-5261}
     ports:
-      - '127.0.0.1:5188:5188'
+      - "127.0.0.1:${DEMO_PORT:-5261}:5261"
     volumes:
-      - demo-data:/data
+      - school-data:/tmp/school-demo
     read_only: true
+    tmpfs:
+      - /tmp
     cap_drop: [ALL]
     security_opt:
       - no-new-privileges:true
     healthcheck:
-      test: [CMD, python, -c, "from urllib.request import urlopen; urlopen('http://127.0.0.1:5188/api/health', timeout=2)"]
+      test: [CMD, python, -c, "import os; from urllib.request import Request, urlopen; urlopen(Request('http://127.0.0.1:5261/health', headers={'Host': '127.0.0.1:' + os.environ['DEMO_PORT']}), timeout=3).close()"]
       interval: 3s
-      timeout: 3s
-      retries: 15
+      timeout: 4s
+      retries: 20
 volumes:
-  demo-data:
+  school-data:

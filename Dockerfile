@@ -1,23 +1,26 @@
 FROM node:22.23.2-bookworm-slim@sha256:48e4b67d85f87bd551df43704e24d252f56cc5f8e9718841aace50f19948f0f9 AS frontend
-WORKDIR /demo
-COPY package.json package-lock.json ./
+WORKDIR /demo/full-school/app
+COPY full-school/app/package.json full-school/app/package-lock.json ./
 RUN npm ci --ignore-scripts --no-audit --no-fund
-COPY tsconfig.json index.html playwright.config.ts ./
-COPY public ./public
-COPY src ./src
-COPY tests ./tests
-RUN npm run build
+COPY full-school/app/index.html full-school/app/tsconfig.json full-school/app/vite.config.ts ./
+COPY full-school/app/public/ ./public/
+COPY full-school/app/src/ ./src/
+COPY full-school/app/scripts/ ./scripts/
+RUN npx --no-install tsc --noEmit \
+    && node scripts/build-portal.mjs \
+    && SHKOLA_STAFF_BUILD_BASE=/school-staff/ node scripts/build-staff.mjs
 
 FROM python:3.12.16-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df
-ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 SHKOLA_DB_PATH=/data/demo.sqlite3
-WORKDIR /demo
-COPY requirements.lock ./
-RUN pip install --no-cache-dir --no-deps -r requirements.lock \
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
+WORKDIR /demo/full-school
+COPY full-school/app/requirements.lock .
+RUN pip install --no-cache-dir -r requirements.lock \
     && pip check \
-    && mkdir /data \
-    && chown 10001:10001 /data
-COPY server ./server
-COPY --from=frontend /demo/dist ./dist
+    && install -d -m 0700 -o 10001 -g 10001 /tmp/school-demo
+COPY full-school/app/server/ ./app/server/
+COPY full-school/local-runtime/ ./local-runtime/
+COPY --from=frontend /demo/full-school/app/dist/ ./app/dist/
+COPY --from=frontend /demo/full-school/app/dist-staff/ ./app/dist-staff/
 USER 10001:10001
-EXPOSE 5188
-CMD ["uvicorn", "server.app:app", "--host", "0.0.0.0", "--port", "5188", "--no-proxy-headers", "--no-access-log"]
+EXPOSE 5261
+CMD ["python", "-B", "local-runtime/serve.py", "--container"]

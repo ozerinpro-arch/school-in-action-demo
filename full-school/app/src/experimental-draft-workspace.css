@@ -1,0 +1,129 @@
+/* The draft uses the working school's controls, day strip and lesson material.
+   Only its layout and the semantic proposal/problem states are scoped here. */
+.esp-editable{--esp-ink:var(--sw-ink);--esp-muted:var(--sw-muted);color:var(--esp-ink);gap:14px}
+.esp-editable .esp-draft-header{gap:10px}
+.esp-editable .esp-eyebrow{font-size:10px;font-weight:600;color:var(--esp-muted);text-transform:uppercase;letter-spacing:.09em}
+.esp-editable h2{font-size:25px;letter-spacing:-.035em;line-height:1.25}
+.esp-editable .esp-state{font-size:11px;font-weight:500;background:var(--sg-fill);color:var(--esp-muted);padding:6px 10px;border:1px solid var(--sw-line);border-radius:8px;white-space:nowrap}
+.esp-editable .esp-state.approved{color:#256341;background:#e5f2ea;border-color:#b5d4c0}
+.esp-editable .esp-state.published{background:var(--sg-fill);color:var(--tt-blue);border-color:var(--sw-line)}
+.esp-editable .esp-state.problem{background:#fff0ef;color:#a63e3e;border-color:#e6b3b3}
+.esp-editable .esp-working-note{display:flex;align-items:flex-start;gap:10px;padding:11px 13px;border:1px solid #ead5b2;border-radius:11px;background:#fff7eb;color:#795a32}
+.esp-working-note>svg{flex-shrink:0;margin-top:3px}
+.esp-editable .esp-toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.esp-editable .esp-action{min-height:42px;font-family:inherit;font-size:12px}
+.esp-editable .esp-toolbar select{min-height:42px;max-width:100%}
+.esp-editable .esp-variant{margin-left:auto;max-width:100%}
+.esp-editable .esp-filters{display:grid;gap:10px}
+.experimental-school-plan.esp-editable .esp-day-tabs{overflow:visible}
+.experimental-school-plan.esp-editable .esp-day-tabs>button{display:flex;flex-direction:column;gap:4px;min-width:0;min-height:44px;padding:4px 3px;font-family:inherit;font-size:11px;line-height:1.2}
+.experimental-school-plan.esp-editable .esp-day-tabs>button strong{font-size:12px}
+.experimental-school-plan.esp-editable .esp-day-tabs>button span{font-size:10px;white-space:nowrap}
+.esp-editable .esp-search-row{display:flex;gap:12px}
+.esp-editable label:not(.esp-checkbox){display:grid;align-content:start;gap:6px;min-width:0;font-size:12px;color:var(--esp-muted)}
+.esp-editable :is(input:not([type=checkbox]),select){width:100%;min-height:42px;padding:9px 11px;border:1px solid var(--sw-line);border-radius:10px;font:inherit;font-size:12px;color:var(--esp-ink)}
+.esp-editable select[multiple]{height:auto;min-height:112px}
+.esp-editable .esp-search{flex:1}
+.esp-editable .esp-search-row>label:first-child{width:140px;flex-shrink:0}
+.esp-editable .esp-legend{display:flex;align-items:center;gap:6px;font-size:10px;color:var(--esp-muted);white-space:nowrap}
+.esp-legend i{width:8px;height:8px;border-radius:3px;background:#c5a571}
+.esp-legend i.error{background:#b76660;margin-left:4px}
+.esp-editable .esp-grid .wst-table{font-size:12px}
+.esp-editable .esp-grid .wst-table td{padding:3px}
+.esp-editable .esp-grid .wst-table th{padding:6px 7px}
+.esp-editable .esp-grid .wst-time{width:112px;min-width:112px;max-width:112px}
+.esp-editable .esp-grid .wst-entries{gap:3px;min-height:0}
+/* A compact record: subject, then complete teacher and room names on natural lines. */
+.experimental-school-plan.esp-editable .esp-grid .tt-lesson.esp-card{display:block;min-height:0;height:auto;padding:3px 5px;font-family:inherit;font-size:11px;line-height:1.25;cursor:pointer;color:#344057;border-radius:6px;background:linear-gradient(150deg,#fff,#f5f8fc);border:1px solid #dce4ee;box-shadow:inset 0 1px #fff;transition:border-color .15s,box-shadow .15s}
+.esp-editable .esp-card strong.esp-card-subject{display:inline;font-size:12px;font-weight:600;padding:0;color:inherit;line-height:1.25}
+.esp-editable .esp-card-subject svg{display:inline;vertical-align:-2px;margin-left:4px}
+.experimental-school-plan.esp-editable .esp-card .esp-card-meta{display:inline;margin:0;font-size:11px;line-height:1.25;font-weight:400;color:#53627a}
+.esp-editable .esp-card .esp-card-teacher,.esp-editable .esp-card .esp-card-room{display:inline;margin:0;padding:0;font-size:11px;line-height:inherit;color:inherit;white-space:normal;overflow-wrap:anywhere;background:none}
+.esp-editable .esp-card .esp-card-room{color:#6d654f}
+.experimental-school-plan.esp-editable .esp-grid .tt-lesson.esp-card.tt-was-edited{background:radial-gradient(ellipse at 15% 0%,#ffffffcf,transparent 85%),linear-gradient(145deg,#fffdf7,#f8f2e6);border-color:#e6dcc8;box-shadow:inset 2px 0 0 #c5a571,inset 0 1px #fff,0 1px 3px #7764450a}
+.esp-editable .esp-grid .esp-card:hover:not(:disabled){border-color:#a6b7d2;transform:none;box-shadow:inset 2px 0 0 #c5a571,inset 0 1px #fff,0 2px 5px #435a7d14}
+.experimental-school-plan.esp-editable .esp-grid .tt-lesson.esp-card.selected{border-color:var(--tt-blue);box-shadow:inset 0 0 0 1px var(--tt-blue)}
+.experimental-school-plan.esp-editable .esp-grid .tt-lesson.esp-card.has-error{background:linear-gradient(145deg,#fffaf9,#f8e9e7);border-color:#dfc0bc;box-shadow:inset 2px 0 0 #b76660,inset 0 1px #fff,0 1px 3px #88453e0b;color:#8e4844}
+.esp-editable .esp-card.has-error .esp-card-subject>svg{color:#b93c34}
+.esp-editable .esp-card:disabled{cursor:default;opacity:.8}
+.esp-editable .esp-form-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.esp-editable .esp-editor{scroll-margin-top:76px}
+.esp-editable .esp-checkbox{display:flex;align-items:flex-start;gap:9px;font-size:12px;line-height:1.6}
+.esp-editable .esp-checkbox input{width:16px;height:16px;accent-color:var(--tt-blue);flex-shrink:0;margin-top:2px}
+.esp-editable .esp-delete{color:#a33f3f}
+.esp-editable .esp-error{padding:10px 12px;background:#fff0ef;border:1px solid #e4b1b1;border-radius:10px;color:#a13b3b}
+.esp-editable .esp-notice{padding:10px 12px;background:#e7f2ea;border:1px solid #bad4c2;border-radius:10px;color:#366b46}
+.esp-editable .esp-problems{display:grid;gap:10px;padding:14px;background:#fff1ef;border:1px solid #e7b7b0;border-radius:12px;color:#9c3b36}
+.esp-editable .esp-recovery{display:grid;gap:10px;padding:13px;border:1px solid #e0c58b;border-radius:12px;background:#fff8e9}
+.esp-editable .esp-diff-list{display:grid;gap:10px;max-height:380px;overflow:auto}
+.esp-editable .esp-diff-list>div{padding:12px;background:#fff7eb;border:1px solid #ead4b4;border-radius:11px;font-size:12px}
+.esp-editable .esp-publication-preview{display:grid;gap:12px;padding:16px;background:var(--sg-fill);border:1px solid var(--sw-line);border-radius:13px}
+.esp-editable .esp-history{display:grid;gap:8px;margin-top:14px}
+.esp-editable .esp-history>div{display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:12px;padding:10px 0;border-bottom:1px solid var(--sw-line)}
+.esp-editable summary>svg{display:inline;margin-left:8px;vertical-align:middle}
+.esp-editable .esp-agent-panel{overflow:hidden;padding:0}
+.esp-editable .esp-agent-context{padding:16px 20px;border-bottom:1px solid var(--sw-line)}
+.esp-editable :is(button,input,select,textarea,summary):focus-visible{outline:3px solid var(--tt-blue);outline-offset:3px}
+.esp-editable .esp-editor:focus{outline:none}
+.esp-editable .esp-legend.published i{background:var(--tt-blue)}
+.esp-editable .esp-legend.published i.error{background:#b76660}
+@media(max-width:900px){.esp-editable .esp-form-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:767px){
+ .esp-editable .esp-form-grid{grid-template-columns:minmax(0,1fr)}
+ .esp-editable .esp-toolbar>.esp-action{flex:1 1 calc(50% - 5px);min-width:0;align-self:stretch}
+ .esp-editable .esp-toolbar>.esp-variant{flex:1 1 100%;min-width:0;margin-left:0}
+ .esp-editable h2{font-size:23px}
+ .esp-editable .esp-legend{white-space:normal}
+ .esp-editable .esp-grid .wst-time{width:104px;min-width:104px;max-width:104px}
+ .esp-editable .esp-history>div{flex-wrap:wrap}
+ .esp-editable .esp-search-row{gap:9px}
+ .esp-editable .esp-search-row>label:first-child{width:104px}
+ .esp-editable .esp-heading{flex-wrap:wrap}
+ .esp-editable .esp-working-note{padding:10px}
+}
+@media(max-width:420px){
+ .experimental-school-plan.esp-editable .esp-day-tabs{overflow-x:auto;grid-template-columns:repeat(7,minmax(46px,1fr));padding-bottom:3px}
+ .experimental-school-plan.esp-editable .esp-day-tabs::before{width:max(46px,calc((100% - 6px) / 7))}
+ .experimental-school-plan.esp-editable .esp-day-tabs>button{min-width:46px}
+}
+@media(prefers-reduced-motion:reduce){.esp-editable *,.esp-editable *::before{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+.experimental-school-plan.esp-editable .esp-grid .tt-lesson.esp-card.has-error.selected{box-shadow:inset 2px 0 0 #b76660,0 0 0 2px var(--tt-blue)}
+
+/* Keep the school glass edge, with quieter working surfaces and tighter rhythm. */
+.school-app.cp-design .experimental-school-plan.esp-editable>.sg-panel{padding:14px;background:radial-gradient(ellipse at 15% 0%,#ffffffb8,transparent 68%),linear-gradient(145deg,#f5f8fc,#eef2f8 60%,#f3f0f7);border:1px solid #ffffffeb;box-shadow:inset 0 1px #fff,inset 0 -1px #6883ab10,0 0 0 1px #6e87af14,0 5px 16px #334f7a09;border-radius:17px}
+.school-app.cp-design .experimental-school-plan.esp-editable>.esp-agent-panel{padding:0}
+.esp-editable .esp-heading p{color:#69788e;line-height:1.45}
+.esp-editable .esp-working-note{background:linear-gradient(140deg,#fffdf8,#f8f2e8);border-color:#e7dcc9;color:#78684e;padding:8px 10px}
+.esp-editable .esp-working-note p{font-size:11px;line-height:1.5}
+.esp-editable .esp-table-panel{gap:10px}
+.esp-editable .esp-grid .wst-scroll{border-color:#d9e2ed;border-radius:10px;background:#f9fbfe}
+.esp-editable .esp-grid .wst-table{--tt-line:#dfe6ef}
+.esp-editable .esp-grid .wst-table :is(td,th){height:auto}
+.esp-editable .esp-grid .wst-table td{background:#ffffff85}
+.esp-editable .esp-grid .wst-table tr:nth-child(even)>td{background:#eef3f94f}
+.esp-editable .esp-grid .wst-table thead th,.esp-editable .esp-grid .wst-table .wst-time{background:linear-gradient(150deg,#f6f8fc,#edf2f8);color:#596a80}
+.esp-editable .esp-grid .wst-time strong{font-size:10px;line-height:1.3;font-weight:500}
+.esp-editable .esp-grid .wst-time span{font-size:10px;line-height:1.3;margin-top:2px;color:#4a5d79}
+.esp-editable .esp-grid .wst-time small{font-size:9px;line-height:1.3;margin-top:1px}
+.esp-editable .esp-grid .wst-navigation{gap:8px;padding-bottom:6px}
+.esp-editable .esp-grid .wst-navigation>p{font-size:10px;line-height:1.4;color:#5f7087}
+.esp-editable .esp-search-row :is(input,select){min-height:36px;padding:6px 9px}
+.esp-editable .esp-search-row label{gap:4px;font-size:11px}
+.esp-editable .esp-toolbar>.esp-variant{order:1}
+.esp-editable .esp-grid .wst-scroll-actions .tt-icon-btn{width:32px;height:32px;min-width:32px;min-height:32px;border-radius:10px}
+@media(max-width:767px){.school-app.cp-design .experimental-school-plan.esp-editable>.sg-panel{padding:12px}.school-app.cp-design .experimental-school-plan.esp-editable>.esp-agent-panel{padding:0}.esp-editable .esp-search-row :is(input,select){min-height:40px}.esp-editable .esp-grid .wst-time{width:94px;min-width:94px;max-width:94px}}
+
+/* Time remains exact; the date is shown once at each day boundary. */
+.esp-editable .esp-grid .wst-compact-time .wst-time{width:94px;min-width:94px;max-width:94px;padding:6px}
+.esp-editable .esp-grid .wst-compact-time .wst-time strong{font-size:11px;line-height:1.3;font-weight:600}
+.esp-editable .esp-grid .wst-compact-time .wst-time span{font-size:10px;line-height:1.3;margin-top:2px}
+.esp-editable .esp-grid .wst-compact-time .wst-time .wst-date{font-size:10px;white-space:normal;color:#596a80;font-weight:500;margin:0 0 4px}
+.esp-editable .esp-grid .wst-table td{padding:2px}
+.esp-editable .esp-grid .wst-entries{gap:2px}
+.esp-editable .esp-grid .wst-table thead th{padding:8px 6px}
+.esp-editable .esp-grid .wst-navigation>p{max-width:600px}
+.esp-editable .esp-grid .wst-day-start:not(:first-child)>:is(th,td){border-top-color:#b6c6dd}
+@media(pointer:coarse){.experimental-school-plan.esp-editable .esp-grid .tt-lesson.esp-card{min-height:44px}}
+
+.esp-editable .esp-grid .wst-table :is(td,th):not(.wst-time){width:184px;min-width:184px;max-width:184px}

@@ -1,0 +1,237 @@
+.director-dashboard{font-variant-numeric:tabular-nums}
+.director-dashboard .dd-heading-actions,.director-dashboard .dd-toolbar,.director-dashboard .dd-view-controls,.director-dashboard .dd-mini-controls{display:flex;align-items:end;flex-wrap:wrap;gap:10px}
+.director-dashboard .dd-toolbar{align-items:center}
+.director-dashboard .dd-source-label{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-left:auto;font-size:12px;color:var(--sg-muted)}
+.director-dashboard .sg-settings-field select{width:100%;max-width:100%;min-width:0;min-height:40px;padding:8px 12px;border:1px solid var(--sg-line);border-radius:8px;background:var(--sg-fill);color:var(--sg-ink);font:inherit}
+.director-dashboard .dd-filters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.director-dashboard .dd-filters>.sg-settings-actions{grid-column:1/-1}
+.director-dashboard .dd-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.director-dashboard .dd-kpi{padding:14px 16px}
+.director-dashboard .dd-kpi>div{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--sg-muted)}
+.director-dashboard .dd-kpi>strong{display:block;font-size:30px;line-height:1.25;font-weight:500;letter-spacing:-.04em;margin:7px 0 3px}
+.director-dashboard .dd-kpi>small{font-size:11px;color:var(--sg-muted);display:block;line-height:1.5}
+.director-dashboard .dd-caption,.director-dashboard .dd-chart-detail{font-size:12px;color:var(--sg-muted);line-height:1.5}
+.director-dashboard .dd-view-controls{justify-content:space-between;align-items:center}
+.director-dashboard .dd-view-toggle{display:flex;gap:6px;flex-wrap:wrap}
+.director-dashboard .dd-main-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(250px,1fr);gap:16px}
+.director-dashboard .dd-equal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px}
+.director-dashboard .dd-heat-panel,.director-dashboard .dd-lower,.director-dashboard .dd-table-panel{margin-top:16px}
+.director-dashboard .dd-daily-svg{width:100%;height:auto;display:block;max-height:265px;margin-top:20px;overflow:visible}
+.director-dashboard svg text{fill:var(--sg-muted);font:12px Inter,system-ui,sans-serif}
+.director-dashboard .dd-grid-line{stroke:var(--sg-line);stroke-width:1}
+.director-dashboard .dd-daily-bar{fill:var(--sg-blue)}
+.director-dashboard svg .dd-value{fill:var(--sg-ink);font-weight:500}
+.director-dashboard .dd-donut{max-width:190px;margin:4px auto}
+.director-dashboard .dd-donut svg{width:100%;height:auto;display:block}
+.director-dashboard .dd-donut-track{fill:none;stroke:var(--sg-fill);stroke-width:18}
+.director-dashboard svg .dd-donut-number{fill:var(--sg-ink);font-size:29px;font-weight:500;letter-spacing:-1px}
+.director-dashboard .dd-legend{list-style:none;padding:0;margin:0;display:grid;gap:9px;font-size:12px}
+.director-dashboard .dd-legend li{display:grid;grid-template-columns:9px minmax(0,1fr) auto;gap:8px;align-items:center;overflow-wrap:anywhere}
+.director-dashboard .dd-legend li>span:first-child{width:8px;height:8px;border-radius:3px}
+.director-dashboard .dd-bars{list-style:none;padding:0;margin:16px 0;display:grid;gap:12px}
+.director-dashboard .dd-bars li>div:first-child{display:flex;justify-content:space-between;gap:12px;font-size:12px;margin-bottom:5px}
+.director-dashboard .dd-bars li>div>span{min-width:0;overflow-wrap:anywhere}
+.director-dashboard .dd-bars strong{white-space:nowrap;font-weight:500}
+.director-dashboard .dd-bar-track,.director-dashboard .dd-coverage{height:8px;border-radius:3px;background:var(--sg-fill);overflow:hidden}
+.director-dashboard .dd-bar-track>span,.director-dashboard .dd-coverage>span{height:100%;display:block;background:var(--sg-blue-text);border-radius:3px}
+.director-dashboard .dd-table-scroll{overflow:auto;max-width:100%;margin-top:14px}
+.director-dashboard .dd-table,.director-dashboard .dd-heat{border-collapse:collapse;width:100%;font-size:12px;text-align:left}
+.director-dashboard .dd-table caption{text-align:left;font-size:15px;font-weight:500;padding:16px 0 10px;color:var(--sg-ink)}
+.director-dashboard .dd-table th,.director-dashboard .dd-table td{border-bottom:1px solid var(--sg-line);padding:10px 12px;vertical-align:top;overflow-wrap:anywhere;max-width:320px}
+.director-dashboard .dd-table th{font-weight:500}
+.director-dashboard .dd-heat th{padding:10px;text-align:center;font-weight:500}
+.director-dashboard .dd-heat td{padding:3px;text-align:center}
+.director-dashboard .dd-heat-cell{display:block;min-height:36px;min-width:42px;width:100%;border:1px solid var(--sg-line);border-radius:6px;background:var(--sg-fill);color:var(--sg-ink);font:inherit;font-weight:500}
+.director-dashboard .dd-chart-detail{min-height:18px;margin-top:10px}
+.director-dashboard .dd-decision-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:18px 0}
+.director-dashboard .dd-decision-grid strong{display:block;font-size:30px;font-weight:500;letter-spacing:-.03em}
+.director-dashboard .dd-decision-grid span{display:block;font-size:12px;color:var(--sg-muted);line-height:1.5}
+.director-dashboard .dd-compare{display:grid;gap:14px;margin:20px 0}
+.director-dashboard .dd-compare>div{display:flex;justify-content:space-between;align-items:baseline;gap:14px;font-size:12px;flex-wrap:wrap}
+.director-dashboard .dd-compare dd{margin:0;font-weight:500}
+.director-dashboard .dd-operations{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:18px}
+.director-dashboard .dd-operation{padding:14px;border:1px solid var(--sg-line);background:#fff;border-radius:10px;min-width:0;overflow-wrap:anywhere}
+.director-dashboard .dd-operation>span,.director-dashboard .dd-known>span{font-size:12px;color:var(--sg-muted)}
+.director-dashboard .dd-operation>strong{display:block;font-size:28px;font-weight:500;margin:6px 0}
+.director-dashboard .dd-operation p{font-size:12px;line-height:1.6}
+.director-dashboard .dd-operation small{font-size:11px;color:var(--sg-muted);display:block;margin-bottom:12px}
+.director-dashboard .dd-operation .sg-control{white-space:normal;max-width:100%;font-size:12px;padding:7px 10px}
+.director-dashboard .dd-known{padding:14px;border:1px solid var(--sg-line);border-radius:10px;background:#fff}
+.director-dashboard .dd-known>strong{display:block;font-size:29px;font-weight:500;margin:8px 0}
+.director-dashboard .dd-known p,.director-dashboard .dd-known small{font-size:12px;color:var(--sg-muted);line-height:1.5}
+.director-dashboard .dd-known .dd-coverage{margin:12px 0}
+.director-dashboard .dd-data-footer{display:flex;flex-wrap:wrap;gap:14px;margin-top:16px;font-size:12px;color:var(--sg-muted)}
+.director-dashboard .dd-completeness dl{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:18px 0}
+.director-dashboard .dd-completeness dt{font-size:12px;color:var(--sg-muted)}
+.director-dashboard .dd-completeness dd{font-size:24px;margin:8px 0 0;font-weight:500}
+.director-dashboard .dd-empty{padding:26px 20px}
+.director-dashboard .dd-notes{font-size:12px;color:var(--sg-muted);line-height:1.6}
+.director-dashboard summary{cursor:pointer;min-height:36px;display:list-item}
+.director-dashboard :is(button,select,[tabindex]):focus-visible{outline:3px solid var(--sg-blue);outline-offset:3px}
+@media(max-width:1100px){.director-dashboard .dd-main-grid{grid-template-columns:minmax(0,1.6fr) minmax(220px,1fr)}.director-dashboard .dd-operations{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:800px){.director-dashboard .dd-main-grid,.director-dashboard .dd-equal-grid{grid-template-columns:minmax(0,1fr)}.director-dashboard .dd-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.director-dashboard .dd-filters{grid-template-columns:repeat(2,minmax(0,1fr))}.director-dashboard .dd-source-label{margin-left:0;width:100%}.director-dashboard .dd-subjects{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;align-items:center}.director-dashboard .dd-subjects>h2{grid-column:1/-1}.director-dashboard .dd-donut{width:100%}}
+@media(max-width:460px){.director-dashboard .dd-heading-actions{gap:6px}.director-dashboard .dd-filters{grid-template-columns:minmax(0,1fr)}.director-dashboard .dd-subjects{grid-template-columns:minmax(0,1fr)}.director-dashboard .dd-decision-grid{grid-template-columns:minmax(0,1fr);gap:12px}.director-dashboard .dd-decision-grid>div{display:flex;align-items:center;gap:14px}.director-dashboard .dd-decision-grid strong{min-width:45px}.director-dashboard .dd-operations{grid-template-columns:minmax(0,1fr)}.director-dashboard .dd-completeness dl{grid-template-columns:repeat(2,minmax(0,1fr))}.director-dashboard .dd-toolbar>.sg-settings-field{width:100%}.director-dashboard .dd-heat th{padding:8px 3px}.director-dashboard .dd-table{min-width:450px}}
+/* Long scope/revision captions stay inside the working panel on narrow screens. */
+.school-app .director-dashboard .sg-section-heading{flex-wrap:wrap;align-items:flex-start}
+.school-app .director-dashboard .sg-section-heading>*{min-width:0;max-width:100%;overflow-wrap:anywhere}
+.school-app .director-dashboard .sg-badge{max-width:100%;white-space:normal;overflow-wrap:anywhere;text-align:left}
+/* Detailed charts reuse the existing v16 school surface and control tokens. */
+.school-app .director-dashboard>.sg-page-heading{flex-wrap:wrap;align-items:flex-start}
+.director-dashboard>.sg-page-heading>div{min-width:0;max-width:100%}
+.director-dashboard .dd-current-scope{overflow-wrap:anywhere}
+.director-dashboard .dd-chart-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.director-dashboard .dd-chart-heading h3{margin:0;font-size:16px}
+.director-dashboard .dd-value-bars,.director-dashboard .dd-status-list,.director-dashboard .dd-catalog-list{list-style:none;margin:16px 0;padding:0;display:grid;gap:16px}
+.director-dashboard .dd-value-label{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:6px;font-size:13px}
+.director-dashboard .dd-value-label>span,.director-dashboard .dd-value-label>button{min-width:0;overflow-wrap:anywhere}
+.director-dashboard .dd-value-label strong{flex:none;font-size:13px;font-weight:600}
+.director-dashboard .dd-value-bars small{display:block;margin-top:5px;color:var(--sg-muted);font-size:11px}
+.director-dashboard .dd-bar-button{font:inherit;font-weight:500;color:var(--sg-blue-text);text-align:left;min-height:36px;background:none;border:0;padding:2px 0;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.director-dashboard .dd-catalog-tools{display:flex;align-items:end;gap:14px;flex-wrap:wrap;margin-top:18px}
+.director-dashboard .dd-catalog-tools>.sg-settings-field{flex:1;min-width:160px}
+.director-dashboard .sg-settings-field :is(input,select){width:100%;max-width:100%;min-width:0;min-height:44px;box-sizing:border-box;padding:9px 12px;border:1px solid var(--sg-line);border-radius:11px;background:#fff;color:var(--sg-ink);font:inherit;font-size:13px}
+.director-dashboard .sg-settings-field small{display:block;font-size:11px;line-height:1.5;color:var(--sg-muted);font-weight:400}
+.director-dashboard .dd-catalog-list>li{padding:14px;border:1px solid var(--sg-line);border-radius:12px;background:linear-gradient(180deg,#fff,#fafbfd)}
+.director-dashboard .dd-catalog-name{display:flex;align-items:start;justify-content:space-between;gap:12px;margin-bottom:9px}
+.director-dashboard .dd-catalog-name strong{min-width:0;overflow-wrap:anywhere;font-size:14px}
+.director-dashboard .dd-catalog-name>span{font-size:12px;color:var(--sg-muted);text-align:right}
+.director-dashboard .dd-catalog-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:10px}
+.director-dashboard .dd-catalog-actions .sg-control{font-size:12px;white-space:normal;text-align:left;max-width:100%}
+.director-dashboard .dd-pager{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:16px;font-size:12px;color:var(--sg-muted)}
+.director-dashboard .dd-status-list{gap:12px}
+.director-dashboard .dd-equal-grid>div{min-width:0}
+.director-dashboard .dd-equal-grid>div>.sg-control{margin:10px 0 0}
+.director-dashboard .dd-bar-track{height:9px;background:var(--sg-fill)}
+.director-dashboard .dd-bar-track>span{background:var(--sg-blue)}
+.director-dashboard .dd-known{background:#fff}
+.director-dashboard .dd-table th,.director-dashboard .dd-table td{max-width:none}
+@media(max-width:600px){
+ .director-dashboard .dd-chart-heading{align-items:flex-start}
+ .director-dashboard .dd-catalog-tools>.sg-settings-field{flex-basis:100%;min-width:0}
+ .director-dashboard .dd-catalog-name{flex-direction:column;gap:5px}
+ .director-dashboard .dd-catalog-name>span{text-align:left}
+ .director-dashboard .dd-value-label{align-items:flex-start;gap:8px}
+ .director-dashboard .dd-value-label strong{white-space:normal;text-align:right;max-width:50%}
+ .director-dashboard .dd-table{min-width:380px}
+ .director-dashboard .dd-pager .sg-control{padding:8px 12px}
+ .director-dashboard .dd-filters .sg-settings-field input{font-size:16px}
+}
+@media(prefers-reduced-motion:reduce){.director-dashboard *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Consistent separation between sibling working cards, including fragment children. */
+.school-app .director-dashboard{display:grid;gap:22px;min-width:0}
+.school-app .director-dashboard>.dd-equal-grid{margin-top:0}
+.school-app .director-dashboard .dd-equal-grid{gap:22px}
+@media(max-width:767px){.school-app .director-dashboard{gap:16px}.school-app .director-dashboard .dd-equal-grid{gap:16px}}
+
+/* Director overview: compact reference composition on the school's porcelain. */
+.school-app .director-dashboard{--sg-muted:#59677e;--dd-blue:#4779e8;--dd-ink:#22324f;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif;color:var(--dd-ink)}
+.school-app .director-dashboard>.sg-page-heading{align-items:center;margin:0;gap:16px}
+.school-app .director-dashboard>.sg-page-heading h1{font-family:inherit;font-size:27px;letter-spacing:-.04em;font-weight:680;margin:3px 0 0}
+.school-app .director-dashboard>.sg-page-heading p{font-size:12px;margin:5px 0 0}
+.director-dashboard .dd-eyebrow{display:block;font-size:10px;letter-spacing:.07em;text-transform:uppercase;font-weight:600;color:#526582;line-height:1.4}
+.school-app .director-dashboard .sg-control{min-height:36px;font-size:11px;gap:7px;padding:8px 12px;border-radius:10px}
+.school-app .director-dashboard .dd-toolbar{padding:12px 14px;border:1px solid #ffffffcf;border-radius:16px;background:linear-gradient(130deg,#f4f7ffb8,#eaeef8a8);box-shadow:inset 0 1px 0 #fff,0 3px 12px #334d7a06;gap:10px}
+.director-dashboard .dd-toolbar>.sg-settings-field{display:flex;align-items:center;gap:10px;font-size:11px;color:#52617a}
+.director-dashboard .dd-toolbar select{width:auto;min-height:36px!important;padding:7px 30px 7px 10px!important;font-size:11px!important}
+.director-dashboard .dd-source-label{font-size:10px;gap:7px;max-width:48%}
+.director-dashboard .dd-current-scope{font-size:10px;margin:0;color:#596780}
+.school-app .director-dashboard .dd-kpis{grid-template-columns:repeat(6,minmax(0,1fr));align-items:stretch}
+.school-app.cp-design .director-dashboard .dd-kpi{min-height:139px;padding:17px 17px 14px;border-radius:17px;border-color:#ffffffbd;color:#203354;box-shadow:inset 0 1px 0 #ffffffb3,0 3px 10px #27426c09;overflow:hidden;position:relative}
+.school-app.cp-design .director-dashboard .dd-kpi::after{content:'';position:absolute;width:92px;height:92px;border:1px solid #ffffff42;border-radius:50%;right:-32px;bottom:-40px;pointer-events:none}
+.school-app.cp-design .director-dashboard .dd-kpi-blue{background:linear-gradient(135deg,#c7dcfc,#b2cdf4)}
+.school-app.cp-design .director-dashboard .dd-kpi-lilac{background:linear-gradient(135deg,#dfd3fa,#cbb9ef)}
+.school-app.cp-design .director-dashboard .dd-kpi-peach{background:linear-gradient(135deg,#f9ddc5,#edc5a5)}
+.school-app.cp-design .director-dashboard .dd-kpi-mint{background:linear-gradient(135deg,#caeade,#abd9ca)}
+.school-app.cp-design .director-dashboard .dd-kpi-rose{background:linear-gradient(135deg,#f5d6e2,#e7b6cb)}
+.school-app.cp-design .director-dashboard .dd-kpi-sand{background:linear-gradient(135deg,#f8edc8,#e9d89c)}
+.director-dashboard .dd-kpi>div{align-items:flex-start;min-height:31px;color:#253b60;font-size:11px;font-weight:600;line-height:1.45;gap:5px}
+.director-dashboard .dd-kpi-icon{display:flex;flex:none;width:26px;height:26px;align-items:center;justify-content:center;border-radius:8px;background:#ffffff45;box-shadow:inset 0 1px #ffffff80}
+.director-dashboard .dd-kpi>strong{font-family:inherit;font-size:34px;line-height:1.1;font-weight:680;letter-spacing:-.045em;margin:12px 0 7px;color:#203354}
+.director-dashboard .dd-kpi>small{color:#394965;font-size:10px;line-height:1.5}
+.school-app .director-dashboard .dd-overview-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(220px,.92fr) minmax(260px,1.08fr);align-items:stretch}
+.school-app .director-dashboard .dd-overview-grid>.sg-panel{padding:20px;border-radius:20px}
+.director-dashboard .dd-panel-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;min-width:0}
+.director-dashboard .dd-panel-heading h2{font-family:inherit;font-weight:650;font-size:16px;line-height:1.35;letter-spacing:-.025em;margin:5px 0 0;color:#263751}
+.director-dashboard .dd-panel-heading>svg{color:#6a7e9f;margin-top:5px;flex:none}
+.director-dashboard .dd-panel-heading .dd-view-toggle{flex-wrap:nowrap;gap:4px}
+.director-dashboard .dd-panel-heading .sg-control{padding:5px 9px;font-size:10px;min-height:30px}
+.director-dashboard .dd-trend-total{display:flex;align-items:center;gap:10px;margin:18px 0 0}
+.director-dashboard .dd-trend-total>strong{font-size:30px;line-height:1;font-weight:650;letter-spacing:-.04em}
+.director-dashboard .dd-trend-total>span{font-size:11px;line-height:1.5;color:#55647e}
+.director-dashboard .dd-trend-total small{display:block;font-size:10px;color:#5e6c83}
+.director-dashboard .dd-trend-svg{width:100%;height:170px;display:block;overflow:visible;margin-top:5px}
+.director-dashboard .dd-trend-svg text{font:11px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#5e6d87}
+.director-dashboard .dd-grid-line{stroke:#c4cfe3;stroke-dasharray:3 4;opacity:.65}
+.director-dashboard .dd-trend-days{display:grid;gap:3px;margin:0 0 13px;padding-left:18px}
+.director-dashboard .dd-trend-days button{display:grid;gap:6px;justify-items:center;border:0;background:transparent;border-radius:7px;color:#51627e;font-family:inherit;font-size:11px;min-height:42px;padding:4px;cursor:pointer}
+.director-dashboard .dd-trend-days button:hover{background:#ffffff80;color:#234a97}
+.director-dashboard .dd-trend-days strong{font-size:10px;font-weight:600;color:#344c73}
+.director-dashboard .dd-caption{font-size:10px;line-height:1.55}
+.director-dashboard .dd-structure-ring{width:162px;max-width:100%;margin:12px auto 7px}
+.director-dashboard .dd-structure-ring svg{display:block;width:100%;height:auto}
+.director-dashboard .dd-donut-track{stroke:#d8e1f1;stroke-width:17;fill:none}
+.director-dashboard svg .dd-donut-number{font-size:27px;font-weight:650;fill:#263751;letter-spacing:-1px}
+.director-dashboard .dd-structure-ring svg text:last-child{font-size:10px;fill:#586982}
+.director-dashboard .dd-structure-legend{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.director-dashboard .dd-structure-legend li{display:grid;grid-template-columns:7px minmax(0,1fr) auto 34px;align-items:center;gap:7px;font-size:10px}
+.director-dashboard .dd-structure-legend i{width:7px;height:7px;border-radius:2px}
+.director-dashboard .dd-structure-legend button{font:inherit;color:#40516e;background:none;border:0;padding:2px 0;text-align:left;cursor:pointer;overflow-wrap:anywhere}
+.director-dashboard .dd-structure-legend button:hover{text-decoration:underline;text-underline-offset:3px}
+.director-dashboard .dd-structure-legend strong{font-size:10px;font-weight:650;color:#293e60}
+.director-dashboard .dd-structure-legend small{font-size:9px;text-align:right;color:#596780}
+.director-dashboard .dd-roster-toggle{margin-top:15px}
+.director-dashboard .dd-roster-toggle .sg-control{min-height:30px;padding:5px 10px;font-size:10px}
+.director-dashboard .dd-roster-panel .dd-table-scroll{margin:10px 0 0}
+.director-dashboard .dd-compact-table{min-width:0;font-size:10px}
+.director-dashboard .dd-compact-table :is(th,td){padding:10px 4px;border-bottom:1px solid #d3dced;font-size:10px;color:#344967;vertical-align:middle}
+.director-dashboard .dd-compact-table thead th{font-size:9px;font-weight:500;color:#5b6982}
+.director-dashboard .dd-compact-table :is(td,th):not(:first-child){text-align:right;white-space:nowrap}
+.director-dashboard .dd-compact-table tbody th{font-weight:550}
+.director-dashboard .dd-compact-table th button{display:flex;align-items:center;gap:7px;border:0;background:transparent;color:inherit;font:inherit;text-align:left;padding:0;cursor:pointer;min-height:22px;max-width:100%;overflow-wrap:anywhere}
+.director-dashboard .dd-roster-mark{flex:none;display:grid;place-items:center;width:25px;height:25px;border-radius:7px;color:#4776b5;background:#dce8fb;box-shadow:inset 0 1px #ffffffa8}
+.director-dashboard .dd-mark-1{background:#e4ddf4;color:#8864b5}.director-dashboard .dd-mark-2{background:#d4eae1;color:#4c917b}.director-dashboard .dd-mark-3{background:#f1e3d3;color:#b5834f}.director-dashboard .dd-mark-4{background:#e8dfed;color:#946c9a}
+.director-dashboard .dd-compact-table tfoot :is(th,td){font-weight:650;border-bottom:0}
+.director-dashboard .dd-roster-footer{display:flex;justify-content:space-between;align-items:center;gap:7px;margin-top:13px;font-size:9px;color:#5b6982}
+.director-dashboard .dd-roster-footer button{display:flex;align-items:center;gap:4px;padding:5px 0;border:0;background:none;color:#3866b1;font:inherit;cursor:pointer}
+.school-app .director-dashboard .dd-work-grid{display:grid;grid-template-columns:minmax(0,2.05fr) minmax(260px,1fr);align-items:stretch}
+.director-dashboard .dd-decision-grid{gap:18px;margin:24px 0}
+.director-dashboard .dd-decision-grid>div{padding-right:16px;border-right:1px solid #d0dbee}
+.director-dashboard .dd-decision-grid>div:last-child{border:0}
+.director-dashboard .dd-decision-grid span{font-size:11px;color:#536782}
+.director-dashboard .dd-decision-grid strong{font-size:31px;letter-spacing:-.04em;font-weight:650;margin:8px 0 6px;color:#2b4164}
+.director-dashboard .dd-decision-grid small{display:block;font-size:10px;color:#5e6c83;line-height:1.4}
+.director-dashboard .dd-decision-footer{display:flex;justify-content:space-between;gap:16px;align-items:center;border-top:1px solid #d3dced;padding-top:16px;font-size:10px;color:#596b86;line-height:1.5}
+.director-dashboard .dd-decision-footer>.dd-heading-actions{flex:none}
+.director-dashboard .dd-document-overview{display:flex;align-items:center;gap:25px;margin:22px 0 18px}
+.director-dashboard .dd-document-overview>div:last-child{display:grid;gap:5px}
+.director-dashboard .dd-document-overview strong{font-size:31px;font-weight:650;letter-spacing:-.04em;line-height:1}
+.director-dashboard .dd-document-overview span{font-size:11px;color:#536682}
+.director-dashboard .dd-document-overview small{font-size:10px;color:#5e6c83}
+.director-dashboard .dd-file-stack{flex:none;width:112px;height:82px;position:relative;margin-top:10px}
+.director-dashboard .dd-file-stack>i,.director-dashboard .dd-file-stack>span{position:absolute;width:103px;height:75px;left:0;top:0;border:1px solid #ffffffd9;border-radius:11px;background:linear-gradient(135deg,#d7e2f4,#b9cce6);box-shadow:inset 0 1px #fff,0 4px 9px #334e7e18;transition:transform .2s ease}
+.director-dashboard .dd-file-stack>i:first-child{transform:translate(8px,-12px) rotate(5deg);background:linear-gradient(135deg,#e5dff3,#c9c1de)}
+.director-dashboard .dd-file-stack>i:nth-child(2){transform:translate(3px,-6px) rotate(-3deg);background:linear-gradient(135deg,#e4eaf7,#c9d6ed)}
+.director-dashboard .dd-file-stack>span{display:flex;flex-direction:column;justify-content:space-between;padding:12px;color:#55749f!important;background:linear-gradient(135deg,#e6edf9,#c5d6ef)}
+.director-dashboard .dd-file-stack b{font-size:9px;font-weight:550}
+.director-dashboard .dd-documents-panel:is(:hover,:focus-within) .dd-file-stack>i:first-child{transform:translate(8px,-16px) rotate(7deg)}
+.director-dashboard .dd-documents-panel:is(:hover,:focus-within) .dd-file-stack>i:nth-child(2){transform:translate(3px,-8px) rotate(-4deg)}
+.director-dashboard .dd-full-details{min-width:0}
+.director-dashboard .dd-full-details>summary{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:18px 20px;border-radius:16px;border:1px solid #ffffffbd;background:linear-gradient(130deg,#e8effb,#e9e6f4);box-shadow:inset 0 1px #fff;color:#304363;list-style:none;min-height:66px}
+.director-dashboard .dd-full-details>summary::-webkit-details-marker{display:none}
+.director-dashboard .dd-full-details>summary strong{font-size:13px;font-weight:600;display:block}
+.director-dashboard .dd-full-details>summary small{font-size:10px;color:#596780;display:block;margin-top:5px;line-height:1.5}
+.director-dashboard .dd-details-action{font-size:11px;color:#3d65a7;flex:none}
+.director-dashboard .dd-details-content{margin-top:22px}
+.director-dashboard .dd-details-content .dd-equal-grid{margin-top:0}
+.director-dashboard .dd-details-content .dd-view-controls{margin-bottom:0}
+@media(max-width:1250px){.school-app .director-dashboard .dd-kpis{grid-template-columns:repeat(3,minmax(0,1fr))}.school-app .director-dashboard .dd-overview-grid{grid-template-columns:minmax(0,1.2fr) minmax(240px,1fr)}.director-dashboard .dd-roster-panel{grid-column:1/-1}.director-dashboard .dd-roster-panel .dd-compact-table{font-size:12px}.director-dashboard .dd-decision-footer{align-items:flex-start;flex-direction:column}}
+@media(max-width:800px){.school-app .director-dashboard .dd-overview-grid,.school-app .director-dashboard .dd-work-grid{grid-template-columns:minmax(0,1fr)}.director-dashboard .dd-roster-panel{grid-column:auto}.director-dashboard .dd-source-label{max-width:none;width:100%;margin-left:0}.director-dashboard .dd-document-overview{justify-content:space-between;margin-right:20px}.director-dashboard .dd-trend-svg{height:185px}}
+@media(max-width:600px){.school-app .director-dashboard .dd-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.school-app.cp-design .director-dashboard .dd-kpi{min-height:137px;padding:15px}.school-app .director-dashboard>.sg-page-heading h1{font-size:25px}.director-dashboard .dd-heading-actions{width:100%}.director-dashboard .dd-heading-actions>.sg-control{flex:1;justify-content:center}.director-dashboard .dd-toolbar>.sg-settings-field{display:block;width:100%;line-height:1.5}.director-dashboard .dd-toolbar select{display:block;width:100%;margin-top:5px}.director-dashboard .dd-panel-heading{flex-wrap:wrap}.director-dashboard .dd-decision-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:20px 0}.director-dashboard .dd-decision-grid>div{display:block;padding-right:7px}.director-dashboard .dd-decision-grid strong{font-size:29px;min-width:0}.director-dashboard .dd-decision-grid span{font-size:10px}.director-dashboard .dd-decision-grid small{font-size:9px}.director-dashboard .dd-decision-footer>.dd-heading-actions{width:100%;flex-wrap:wrap}.director-dashboard .dd-decision-footer .sg-control{flex-basis:100%}.director-dashboard .dd-structure-ring{width:175px}.director-dashboard .dd-structure-legend{gap:12px}.director-dashboard .dd-structure-legend li{font-size:12px;grid-template-columns:8px minmax(0,1fr) auto 40px}.director-dashboard .dd-structure-legend strong{font-size:12px}.director-dashboard .dd-structure-legend small{font-size:10px}.director-dashboard .dd-full-details>summary{padding:16px;align-items:flex-start;gap:10px}.director-dashboard .dd-details-content{margin-top:16px}.director-dashboard .dd-kpi>strong{font-size:32px}.director-dashboard .dd-compact-table :is(th,td){font-size:11px;padding:11px 4px}}
+@media(prefers-reduced-transparency:reduce){.school-app .director-dashboard .dd-toolbar{background:#eaf0fa}.school-app.cp-design .director-dashboard .dd-kpi-blue{background:#bdd3f4}.school-app.cp-design .director-dashboard .dd-kpi-lilac{background:#d5c6f0}.school-app.cp-design .director-dashboard .dd-kpi-peach{background:#f1d0b4}.school-app.cp-design .director-dashboard .dd-kpi-mint{background:#bce0d2}.school-app.cp-design .director-dashboard .dd-kpi-rose{background:#edc5d6}.school-app.cp-design .director-dashboard .dd-kpi-sand{background:#eee1b2}}
+
+/* Polish: equal bento boundaries; the compact roster uses four exact rows. */
+.school-app.cp-design .director-dashboard .dd-overview-grid,.school-app.cp-design .director-dashboard .dd-work-grid{align-items:stretch}
+.school-app.cp-design .director-dashboard .dd-kpis{align-items:stretch}
+.director-dashboard .dd-compact-table :is(th,td){padding-top:8px;padding-bottom:8px}
+.director-dashboard .dd-roster-panel .dd-caption{margin-bottom:0}

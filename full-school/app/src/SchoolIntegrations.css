@@ -1,0 +1,21 @@
+/* Layout only. Existing school surfaces, typography and controls are reused. */
+.si-root { min-width: 0; }
+.si-status-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.si-workspace { display: grid; grid-template-columns: minmax(230px, .8fr) minmax(0, 1.2fr); gap: 16px; margin-top: 16px; }
+.si-row, .si-actions { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.si-row h3 { margin: 0; }
+.si-task-list { list-style: none; padding: 0; margin: 12px 0 0; }
+.si-task-list li + li { margin-top: 12px; }
+.si-task-button { width: 100%; justify-content: space-between; text-align: left; gap: 12px; }
+.si-task-button span, .si-task-button strong, .si-task-button small { display: block; overflow-wrap: anywhere; }
+.si-task-button small { margin-top: 4px; font-weight: 400; }
+.si-note { font-size: .88em; }
+.si-message { white-space: pre-wrap; overflow-wrap: anywhere; }
+.si-blockers, .si-create { margin-top: 16px; }
+.si-create form, .si-question form { display: grid; gap: 12px; }
+.si-create label, .si-question label { display: grid; gap: 6px; }
+.si-create input, .si-create textarea, .si-question textarea, .si-question select { width: 100%; box-sizing: border-box; font: inherit; padding: 10px; }
+.si-create textarea, .si-question textarea { min-height: 90px; resize: vertical; }
+.si-question { margin-top: 18px; }
+.si-task-button:focus-visible, .si-create input:focus-visible, .si-create textarea:focus-visible, .si-question textarea:focus-visible, .si-question select:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+@media (max-width: 768px) { .si-workspace, .si-status-grid { grid-template-columns: 1fr; } }

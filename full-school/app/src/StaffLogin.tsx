@@ -1,0 +1,14 @@
+import './cloud-porcelain.css'
+import {useEffect,useState,type FormEvent}from'react'
+import{apiFetch,resetApiSession}from'./api'
+import './staff-access.css'
+
+type Props={onAuthenticated:()=>void;inviteToken?:string}
+export default function StaffLogin({onAuthenticated,inviteToken}:Props){
+ const[token]=useState(()=>inviteToken||new URLSearchParams(location.hash.replace(/^#/, '')).get('invite')||'')
+ const[username,setUsername]=useState(''),[password,setPassword]=useState(''),[again,setAgain]=useState(''),[busy,setBusy]=useState(false),[error,setError]=useState('')
+ useEffect(()=>{if(token&&location.hash)history.replaceState(null,'',location.pathname+location.search)},[token])
+ async function submit(e:FormEvent){e.preventDefault();if(busy)return;setError('');if(token&&password!==again){setError('Пароли не совпадают');return}setBusy(true)
+  try{const r=await apiFetch(token?'/api/staff/accept':'/api/staff/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(token?{token,password}:{username,password})});const d=await r.json();if(!r.ok)throw Error(typeof d.detail==='string'?d.detail:'Не удалось войти');setPassword('');setAgain('');resetApiSession();onAuthenticated()}catch(e){setError(e instanceof Error?e.message:'Нет связи. Повторите вход.')}finally{setBusy(false)}}
+ return <main className="school-app cp-design staff-login"><section className="sg-panel staff-card"><p className="staff-eyebrow">Школа.Действие · вход в школу</p><h1>{token?'Школьный аккаунт':'Вход в школу'}</h1><p>{token?'Назначение и роль уже подтверждены школой. Задайте личный пароль; ссылка действует один раз.':'Используйте свой школьный аккаунт. Доступ выдаёт уполномоченный сотрудник школы.'}</p>{error&&<p className="staff-error"role="alert">{error}</p>}<form onSubmit={submit}>{!token&&<label>Логин<input autoComplete="username"required maxLength={80}value={username}onChange={e=>setUsername(e.target.value)}disabled={busy}/></label>}<label>{token?'Новый пароль':'Пароль'}<input type="password"autoComplete={token?'new-password':'current-password'}required minLength={token?12:1}maxLength={256}value={password}onChange={e=>setPassword(e.target.value)}disabled={busy}/></label>{token&&<><small>От12 до256 символов. Не используйте общий пароль школы.</small><label>Повторите пароль<input type="password"autoComplete="new-password"required minLength={12}maxLength={256}value={again}onChange={e=>setAgain(e.target.value)}disabled={busy}/></label></>}<button type="submit"className="sg-control staff-primary"disabled={busy}>{busy?'Проверяем…':token?'Создать личный вход':'Войти'}</button></form><p className="staff-muted">Пароли и коды не отправляйте в MAX или переписку. Если доступ отозван или приглашение истекло, обратитесь к директору или администратору доступа.</p></section></main>
+}

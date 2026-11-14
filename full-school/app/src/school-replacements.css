@@ -1,0 +1,35 @@
+/* Layout only: established school surfaces, type, blue controls remain intact. */
+.school-app .school-replacements{display:grid;gap:22px;min-width:0}
+.school-app .school-replacements>.sg-page-heading{margin-bottom:0}
+.school-app .school-replacements :is(h1,h2,h3,p,strong,li,label){overflow-wrap:anywhere}
+.school-app .school-replacements :is(.sg-page-heading,.sg-section-heading){flex-wrap:wrap;gap:12px;align-items:flex-start}
+.school-replacements .sr-fields,.school-replacements .sr-change-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.school-replacements .sr-change-grid{grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr);align-items:center;margin:18px 0}
+.school-replacements .sr-change-card{min-width:0;padding:16px;border:1px solid var(--sg-line);border-radius:12px;background:var(--sg-fill)}
+.school-replacements .sr-change-card h3{font-size:13px;color:var(--sg-muted);margin:0 0 10px}
+.school-replacements .sr-change-card p{font-size:13px;line-height:1.6;margin:7px 0 0}
+.school-replacements .sr-muted{font-size:12px;line-height:1.6;color:var(--sg-muted)}
+.school-replacements .sr-notice{padding:14px 16px;border:1px solid var(--sg-line);background:var(--sg-fill);border-radius:12px;line-height:1.6}
+.school-replacements .sr-notice ul{padding-left:20px;margin-bottom:0}
+.school-replacements .sr-check{display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.6;margin:16px 0}
+.school-replacements .sr-check input{flex:none;width:18px;min-height:18px;margin-top:3px}
+.school-replacements select{min-height:44px;padding:10px 12px;border:1px solid var(--sg-line);border-radius:10px;background:var(--sg-fill);color:var(--sg-ink);font:inherit;max-width:100%;min-width:0}
+.school-replacements .sr-records{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:20px}
+.school-replacements .sr-records>li{border:1px solid var(--sg-line);border-radius:12px;padding:16px;min-width:0}
+.school-replacements .sr-records h3{font-size:15px;margin:0}
+.school-replacements .sr-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.school-app .school-replacements .sg-control{white-space:normal;max-width:100%;min-width:0}
+.school-replacements .sg-badge{white-space:normal;text-align:left}
+.school-replacements :is(input,textarea,select,button):focus-visible{outline:2px solid var(--sg-blue);outline-offset:3px}
+@media(max-width:767px){.school-app .school-replacements{gap:16px}.school-replacements .sr-fields,.school-replacements .sr-change-grid{grid-template-columns:minmax(0,1fr);gap:16px}.school-replacements .sr-change-grid>svg{transform:rotate(90deg);margin:auto}.school-replacements .sr-records{gap:16px}.school-replacements .sr-fields :is(input,textarea,select){font-size:16px}}
+
+.school-replacements .sr-change-card--changed{background:#fff4e5;border-color:#d69a47}
+.school-replacements .sr-change-mark{display:block;width:fit-content;max-width:100%;color:#854600;background:#ffe4bc;border:1px solid #d69a47;border-radius:6px;padding:3px 7px;font-size:12px;margin-bottom:10px;font-weight:600}
+.school-replacements .sr-teacher-changed{color:#854600;font-weight:600}
+
+/* Keep the existing checkbox size when the general settings form rule applies. */
+html[lang="en"] .school-app .school-replacements .sg-settings-form .sr-check input[type="checkbox"] {
+ width:18px;
+ min-width:18px;
+ max-width:18px;
+}

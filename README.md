@@ -1,45 +1,40 @@
 # School in Action
 
-An English-language school operations demo. The school, people, activities and amounts are fictional. The demo runs locally and uses a separate SQLite volume.
+English edition of the full School in Action workspace. The demo starts with a fictional school, classes, staff, student accounts and a confirmed club charge. It includes the timetable planner, substitutions and a PDF for confirmed club charges.
 
-## Run locally
+## Start
 
-Install Docker with the Compose plugin. From the root of the clone, run:
+Install Docker Engine with the Compose plugin, or Docker Desktop, and start Docker. In the root of the clone run:
 
 ```sh
 docker compose up --build
 ```
 
-Open [http://127.0.0.1:5188](http://127.0.0.1:5188). The first build downloads the base images and pinned dependencies. The server is published on loopback and needs no keys or accounts. The port must be available.
+When the server reports it is running, open [School in Action](http://127.0.0.1:5261/). Use the address shown here, including `127.0.0.1`. The first build downloads pinned dependencies. If port 5261 is in use, run `DEMO_PORT=5262 docker compose up --build` and open [port 5262](http://127.0.0.1:5262/).
 
-## Try the workflows
+The director portal opens directly on your computer. The service is published on loopback. Use the [staff and student sign-in](http://127.0.0.1:5261/school-staff/) for the fictional accounts below. Their shared demo password is `SchoolDemo-2026-Local!`. Separate browser profiles are useful when comparing roles.
 
-| Workflow | Steps |
+| Role | Username |
 | --- | --- |
-| Weekly schedule | As Director, filter by weekday or class. Add or edit a lesson. The server checks room, teacher and class overlaps. |
-| Substitutions | Choose **Teacher · Maya Brooks**, find Monday's **Cell structure** lesson and send a substitution request. As **Director**, approve **Owen Reed** in **Substitutions**. Open Owen's schedule to complete the lesson and Jamie's schedule to see who is covering it. |
-| Assignments | As Maya, publish a Biology assignment for **Jamie Lane**. As Jamie, submit an answer. Return to Maya to score it and leave feedback. Read the result in Jamie's Assignments and Grades, and see counts by subject in Progress. |
-| Materials and tasks | Teachers can share notes for their scheduled lessons and update their school tasks. Students see their class materials and their own assignment and schedule activity. |
-| Clubs | As Director, create or edit a program and manage enrollment. As Jamie, join or leave an active club. For a paid fictional club, preview, draft, confirm or cancel a simulated charge in the director workspace. |
-| Receipts | Open **Receipts** as Director or Jamie to download the Robotics club example. Confirm a new club charge to issue its PDF. Cancelling a charge removes its download. The PDFs record fictional charges and show that no payment was collected. |
-| School overview | As Director, open the directory, approve the example document, view live counts and inspect the activity feed. |
+| Director | `demo.director` |
+| Planner | `demo.planner` |
+| Teacher | `demo.teacher` |
+| Substitute teacher | `demo.substitute` |
+| Student | `demo.student` |
+| Access administrator | `demo.access` |
 
-The role selector is intentionally open to everyone with local access. Its fictional sessions expire or end when the container restarts. SQLite changes survive a stop, restart or container replacement. Use **Overview → Reset demo** in the director workspace to restore the original fictional records.
+## Try it
 
-## Integration status
+| Workflow | Where to start |
+| --- | --- |
+| Weekly timetable | Open **Timetable** in the director portal. Filter by class, open a lesson to edit it, or inspect the entire school grid. |
+| Daily timetable | Sign in as the planner. Open **Timetable** and the daily plan to check the seeded brief and run the scheduler. |
+| Substitution | In the director portal, open **Substitutions**. Pick the Monday Grade 7A mathematics lesson, select Owen Reed and enter a reason. Preview, confirm the draft, then preview and publish the change. Sign in as the substitute to see the published result. |
+| Assignments | Jamie Lane can open **My assignments** and submit an answer to **Equivalent fractions**. Sign in as the teacher and open **Assignments and grading** to review it. |
+| Clubs and receipts | In the director portal open **Clubs → Charges** and download the seeded Robotics club PDF. New charges get a download after confirmation. Jamie can download their own confirmed PDFs from **Club receipts** in the student workspace. Cancelling a charge withdraws its download. The PDF records the charge and states that no payment was collected. |
 
-The **Integrations** page lists the disconnected or omitted systems. These include NanoGPT, MAX, real staff/student identity, imports, school data connectors and payment processing. Automated schedule solving, daily planning, live calendar and formal school publication are outside the standalone demo. Schedule edits and substitutions appear directly in the appropriate workspaces. The legacy accountant workspace, global search, canned helper, attendance, assignment drafts, discussions and practice activities are outside this demo.
+`docker compose stop`, `docker compose up -d` and container replacement keep the fictional records in the `school-data` volume. If you want to remove that volume and start with a fresh fictional school, run `docker compose down -v` and then start again.
 
-## Verification
+The **AI and MAX** screen shows their offline status. Historical workflows that depend on school source files are unavailable in this build. The earlier standalone demo is available via `docker compose -f compose.standalone.yaml up --build` on port 5188.
 
-Use a disposable demo instance for tests. The browser suite restores the fictional seed when explicitly instructed:
-
-```sh
-npm ci --ignore-scripts
-npx playwright install chromium
-DEMO_E2E_RESET=1 npm run test:e2e
-```
-
-GitHub Actions builds the image, runs the browser suite and checks that a fictional edit survives a restart. The build uses React, TypeScript and Vite for the interface, and FastAPI, Uvicorn and SQLite for the server. The base images, Python dependencies and npm dependencies are pinned. The runtime uses local assets and makes no outbound integration requests.
-
-The demo reuses the local project’s session, storage and request-boundary patterns, and its school favicon. The interface uses Inter (SIL Open Font License) and Lucide icons (ISC).
+The full edition uses the original Cloud Porcelain interface and an English display dictionary generated with the Helsinki-NLP OPUS-MT Russian–English model (CC BY 4.0), with reviewed UI wording. The font is Inter (SIL Open Font License), and icons are from Lucide (ISC).

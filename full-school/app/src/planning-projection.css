@@ -1,0 +1,32 @@
+/* Readonly view of a real run; established school surfaces are retained. */
+.tt-workspace[data-run-projection]{gap:22px}
+.tt-workspace .pp-banner{display:grid;gap:14px;padding:18px;border-color:#d6ae67;background:#fff8eb}
+.tt-workspace .pp-banner>div>strong{font-size:17px;color:#493519}
+.tt-workspace .pp-banner p{margin-top:7px;color:#493519;line-height:1.6}
+.tt-workspace .pp-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.tt-workspace .pp-actions .tt-btn{white-space:normal;max-width:100%}
+.tt-workspace .pp-legend{display:flex;flex-wrap:wrap;gap:10px;font-size:12px}
+.tt-workspace .pp-legend>span{max-width:100%}
+.tt-workspace .pp-error{padding:12px;border:1px solid #c35252;border-radius:9px;background:#fff0f0;color:#8f2020!important}
+.tt-workspace .pp-route{display:flex;flex-direction:column;gap:7px;margin-top:9px;padding-top:9px;border-top:1px solid #d6ae67;overflow-wrap:anywhere}
+.tt-workspace .pp-route>span{font-size:11px;line-height:1.6;color:#713e10}
+.tt-workspace .pp-change-badge{display:block;align-self:flex-start;padding:3px 6px;border:1px solid #d6ae67;background:#ffe6b9;color:#593b11!important;border-radius:6px;font-weight:600}
+.tt-workspace.tt-school .tt-calendar .tt-lesson.tt-projection-card{cursor:default;max-width:100%;white-space:normal}
+.tt-workspace.tt-school .tt-calendar .tt-lesson.tt-projection-changed{background:#fff4e5;border-color:#d69a47;box-shadow:inset 3px 0 #d88929}
+.tt-workspace.tt-school .tt-calendar .tt-lesson.tt-projection-unplaced-source{background:#fff0f0;border:1px solid #c35252;box-shadow:inset 3px 0 #c35252}
+.tt-workspace .pp-unplaced-label{display:flex;flex-direction:column;gap:7px;margin-top:9px;padding-top:9px;border-top:1px solid #d79d9d;color:#8f2020;font-size:12px;line-height:1.6}
+.tt-workspace .pp-unplaced-label>strong{color:#8f2020!important}
+.tt-workspace .pp-unplaced,.tt-workspace .pp-removals{margin:20px 0;padding:16px;border:1px solid #c35252;border-radius:12px;background:#fff0f0;min-width:0}
+.tt-workspace .pp-unplaced h3{display:flex;gap:9px;align-items:center;color:#8f2020}
+.tt-workspace .pp-unplaced p,.tt-workspace .pp-unplaced li{color:#8f2020;line-height:1.6}
+.tt-workspace .pp-unplaced>ul,.tt-workspace .pp-removals>ul{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:16px}
+.tt-workspace .pp-unplaced li,.tt-workspace .pp-removals li{padding:12px;border:1px solid #ddadad;border-radius:9px;background:#fff;overflow-wrap:anywhere}
+.tt-workspace .pp-unplaced .pp-cause{font-weight:600}
+.tt-workspace .pp-unplaced button,.tt-workspace .pp-removals button{margin-top:10px;max-width:100%;white-space:normal}
+.tt-workspace .pp-removals{background:#fff8eb;border-color:#d6ae67;color:#493519}
+.tt-workspace .pp-removals li{border-color:#e3cda4}
+.tt-workspace .pp-base-note{display:block;font-size:11px;color:var(--sw-muted,#5e6269);margin-top:8px}
+@media(max-width:767px){.tt-workspace[data-run-projection]{gap:16px}.tt-workspace .pp-banner{padding:14px}.tt-workspace .pp-unplaced,.tt-workspace .pp-removals{padding:12px;margin:16px 0}.tt-workspace .pp-actions{gap:8px}}
+@media(prefers-reduced-motion:reduce){.tt-workspace .pp-banner *{animation:none!important;transition:none!important}}
+
+.tt-workspace.tt-school .tt-calendar .tt-projection-unplaced-source .pp-unplaced-label,.tt-workspace.tt-school .tt-calendar .tt-projection-unplaced-source .pp-unplaced-label>span{color:#8f2020}

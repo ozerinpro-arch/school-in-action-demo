@@ -1,0 +1,29 @@
+/* Functional layout only; controls and surfaces reuse the existing school UI. */
+.teacher-preparation .tp-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(240px,1fr);gap:16px;align-items:start}
+.teacher-preparation .tp-fields{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.teacher-preparation .sg-settings-form select{max-width:100%;min-width:0;min-height:44px;font:inherit;color:inherit}
+.teacher-preparation .tp-materials{list-style:none;padding:0;margin:0;display:grid;gap:20px}
+.teacher-preparation .tp-materials li{min-width:0;overflow-wrap:anywhere;padding-bottom:18px;border-bottom:1px solid var(--sg-line)}
+.teacher-preparation .tp-server-text{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;max-height:320px;overflow:auto}
+.teacher-preparation .sw-table td{white-space:normal;overflow-wrap:anywhere}
+.teacher-preparation .sw-table td .sg-control{margin:3px;white-space:normal}
+.teacher-preparation .tp-content{min-height:260px}
+.teacher-preparation .tp-pending{scroll-margin-top:20px}
+@media(max-width:900px){.teacher-preparation .tp-layout{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){.teacher-preparation .tp-fields{grid-template-columns:minmax(0,1fr)}}
+
+.teacher-preparation .tp-layout[hidden]{display:none}
+.teacher-preparation .tp-tools{display:grid;gap:12px;padding-top:14px;padding-bottom:14px}
+.teacher-preparation .tp-tabs,.teacher-preparation .tp-next{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.teacher-preparation .tp-tabs .sg-badge{margin-left:auto}
+.teacher-preparation .tp-next>span{font-size:12px;color:var(--sg-muted);flex:1;min-width:160px}
+.teacher-preparation .tp-help,.teacher-preparation .tp-ai-instructions{font-size:12px;line-height:1.5;color:var(--sg-muted)}
+.teacher-preparation summary{cursor:pointer;min-height:34px;display:list-item}
+.teacher-preparation .tp-result{padding:10px 14px;border:1px solid var(--sg-line);border-radius:9px;background:var(--sg-fill);font-size:12px}
+@media(max-width:460px){.teacher-preparation .tp-tabs .sg-badge{margin-left:0}.teacher-preparation .tp-next{align-items:start}}
+
+/* Functional separation of teacher work groups; existing material is unchanged. */
+.teacher-preparation{display:flex;flex-direction:column;gap:20px;min-width:0}
+.school-app .teacher-preparation>.sg-page-heading{margin-bottom:0}
+.teacher-preparation .tp-layout{row-gap:20px}
+@media(max-width:600px){.teacher-preparation{gap:16px}.teacher-preparation .tp-layout{row-gap:16px}}

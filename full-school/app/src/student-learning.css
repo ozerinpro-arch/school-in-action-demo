@@ -1,0 +1,39 @@
+/* Layout only. Surfaces, type and controls retain the established school material. */
+.school-app .sl-workspace{min-width:0;display:grid;gap:18px}
+.school-app .sl-workspace .sg-page-heading,.school-app .sl-workspace .sg-section-heading{flex-wrap:wrap;gap:12px;min-width:0}
+.school-app .sl-workspace :is(h1,h2,h3,p,strong,summary){overflow-wrap:anywhere}
+.school-app .sl-workspace .sl-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:18px;align-items:start}
+.school-app .sl-workspace .sl-fields{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.school-app .sl-workspace .sl-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.school-app .sl-workspace .sg-control{max-width:100%;min-width:0;white-space:normal}
+.school-app .sl-workspace :is(select,input,textarea){max-width:100%;min-width:0}
+.school-app .sl-workspace select{min-height:44px;padding:10px 12px;border:1px solid var(--sg-line);border-radius:10px;background:var(--sg-fill);color:var(--sg-ink);font:inherit}
+.school-app .sl-workspace .sl-list,.school-app .sl-workspace .sl-messages{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.school-app .sl-workspace .sl-list>li,.school-app .sl-workspace .sl-messages>li{min-width:0;border-bottom:1px solid var(--sg-line);padding:14px 0}
+.school-app .sl-workspace .sl-text{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.65}
+.school-app .sl-workspace .sl-muted,.school-app .sl-workspace .sl-message-heading time{font-size:12px;color:var(--sg-muted);line-height:1.5}
+.school-app .sl-workspace .sl-message-heading{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap;margin-bottom:8px}
+.school-app .sl-workspace .sl-notice{padding:12px 14px;border:1px solid var(--sg-line);border-radius:10px;background:var(--sg-fill)}
+.school-app .sl-workspace .sl-error{color:var(--sg-ink);border-left:3px solid var(--sg-blue);padding-left:12px}
+.school-app .sl-workspace .sl-thread{scroll-margin-top:96px}
+.school-app .sl-workspace .sl-thread details{margin:14px 0}
+.school-app .sl-workspace summary{cursor:pointer;min-height:36px}
+.school-app .sl-workspace .sl-invite{min-width:0}
+.school-app .sl-workspace :is(button,a,input,textarea,select,summary):focus-visible{outline:2px solid var(--sg-blue);outline-offset:3px}
+@media(max-width:900px){.school-app .sl-workspace .sl-layout{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:580px){.school-app .sl-workspace .sl-fields{grid-template-columns:minmax(0,1fr)}}
+/* Explicit submissions retain the same calm work surface as the existing thread. */
+.school-app .sl-workspace .sl-work{margin:24px 0;padding:20px 0;border-top:1px solid var(--sg-line);border-bottom:1px solid var(--sg-line);min-width:0}
+.school-app .sl-workspace .sl-work-meta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:16px;font-size:14px}
+.school-app .sl-workspace .sl-attempts{list-style:none;padding:0;margin:0 0 20px;display:grid;gap:16px}
+.school-app .sl-workspace .sl-attempts>li{padding:16px;border:1px solid var(--sg-line);border-radius:12px;min-width:0;background:var(--sg-fill)}
+.school-app .sl-workspace .sl-review{padding-top:12px;margin-top:12px;border-top:1px solid var(--sg-line)}
+.school-app .sl-workspace .sl-review time{font-size:12px;color:var(--sg-muted)}
+.school-app .sl-workspace .sl-work textarea{width:100%;resize:vertical}
+.school-app .sl-workspace .sl-review-form{margin-top:20px}
+@media(max-width:580px){.school-app .sl-workspace .sl-attempts>li{padding:12px}.school-app .sl-workspace .sl-work{margin:16px 0;padding:16px 0}}
+.school-app .sl-workspace .sl-today-counts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:16px 0}
+.school-app .sl-workspace .sl-today-counts>div{display:grid;gap:4px;min-width:0}
+.school-app .sl-workspace .sl-today-counts strong{font-size:24px;line-height:1.3}
+.school-app .sl-workspace .sl-today-counts span{font-size:14px;color:var(--sg-muted)}
+@media(max-width:580px){.school-app .sl-workspace .sl-today-counts{grid-template-columns:repeat(2,minmax(0,1fr))}}

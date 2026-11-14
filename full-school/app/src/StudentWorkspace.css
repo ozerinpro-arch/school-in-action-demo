@@ -1,0 +1,30 @@
+.school-app.student-workspace .sg-sidebar .sg-brand{cursor:default}
+.school-app.student-workspace .sl-list h3{margin:12px 0 6px}
+.school-app.student-workspace #student-schedule{scroll-margin-top:72px}
+.school-app.student-workspace :is(#student-today,#student-assignments,#student-practice,.student-thread-anchor){scroll-margin-top:96px;min-width:0}
+.school-app.student-workspace .student-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:16px 0}
+.school-app.student-workspace .student-metrics .student-metric{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:4px;padding:16px;min-height:88px;text-align:left}
+.school-app.student-workspace .student-metric strong{font-size:30px;line-height:36px;font-weight:650}
+.school-app.student-workspace .student-metric span{font-size:14px;line-height:20px}
+.school-app.student-workspace .student-progress-note{margin:12px 0 24px}
+.school-app.student-workspace .student-nearest{list-style:none;padding:0;margin:0;display:grid;gap:0}
+.school-app.student-workspace .student-nearest>li{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0;border-top:1px solid var(--sg-line);min-width:0}
+.school-app.student-workspace .student-nearest>li>div{min-width:0;flex:1}
+.school-app.student-workspace .student-nearest h3{margin:8px 0}
+.school-app.student-workspace .student-nearest>li>.sg-control{flex-shrink:0}
+.school-app.student-workspace .student-due{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:14px;line-height:20px;color:var(--sg-muted)}
+.school-app.student-workspace .student-overdue{font-size:12px;line-height:16px;border:1px solid var(--sg-line);border-radius:8px;padding:4px 8px;color:var(--sg-ink)}
+.school-app.student-workspace .student-kind-filter{margin-bottom:12px}
+.school-app.student-workspace .student-kind-filter .sg-control[aria-pressed=true]{box-shadow:inset 0 0 0 1px var(--sg-blue);border-color:var(--sg-blue)}
+.school-app.student-workspace .student-status{font-size:14px;line-height:20px;color:var(--sg-muted)}
+.school-app.student-workspace .student-empty{padding:16px 0}
+.school-app.student-workspace .student-empty h3{margin-bottom:8px}
+.school-app.student-workspace .student-pagination{margin-top:16px}
+.school-app.student-workspace .student-loading{display:grid;gap:12px;min-width:0}
+.school-app.student-workspace .student-loading span{display:block;min-height:48px;border:1px solid var(--sg-line);border-radius:12px;background:var(--sg-fill)}
+.school-app.student-workspace .student-loading span:last-child{width:70%}
+@media(max-width:900px){.school-app.student-workspace .student-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:580px){.school-app.student-workspace .student-nearest>li{align-items:stretch;flex-direction:column}.school-app.student-workspace .student-nearest>li>.sg-control{width:100%}.school-app.student-workspace .student-metrics{gap:12px}.school-app.student-workspace .student-metrics .student-metric{padding:12px}}
+
+/* Reserve viewport space so opening a work aligns below the fixed header. */
+.student-thread-anchor{min-height:calc(100dvh - 96px)}
